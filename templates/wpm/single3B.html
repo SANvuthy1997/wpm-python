@@ -1,0 +1,38 @@
+{% include template_name+'/header.html' %} 
+
+{%for post in post_object%}
+<div style="background-image: url(/static/{{template_name}}/img/banner.jpg);" class="bannerPage hide-on-small-only">
+  <h5 class="whowearePage">{{post.category.name}}</h5>
+</div>
+
+<div class="container1" style="margin-top: 30px; padding: 0px 90px;">
+  <div class="row">
+    <div class="col s12 m12 l12">
+      <h5 class="singleTitle">{{post.title}}</h5>
+      <span>
+        <i class="material-icons access_time">access_time</i> 
+      </span> 
+      <span class="date show_date">
+        {{post.published_at}}
+      </span>
+      <script type="text/javascript">
+        var dateTime = "{{post.published_at}}";
+        dateTime = dateTime.split(":");
+        $('.show_date').html(dateTime[0]+":"+dateTime[1]);
+      </script>
+      <br>
+      <br>
+      <img src="/static/images/images/{{post.feature_image}}" class="responsive-img">
+      <p>
+        {{post.description|safe}}
+      </p>
+    </div>
+
+    </div>
+
+  </div>
+  
+</div>
+{%endfor%}
+
+{% include template_name+'/footer.html' %}

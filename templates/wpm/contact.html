@@ -1,0 +1,68 @@
+{% include template_name+'/header.html' %} 
+{% with messages = get_flashed_messages() %}
+   {% if messages %}
+      {% for message in messages %}
+         {{ message }}
+      {% endfor %}
+   {% endif %}
+{% endwith %}
+<div style="background-image: url(/static/{{template_name}}/img/banner.jpg);" class="bannerPage">
+  <h5 class="whowearePage">Contact</h5>
+</div>
+
+<div class="container1" style="padding-top: 40px;">
+  <div class="row">
+    <div class="col s12 m6 l6">
+      <h5 class="conForm">Contact Form</h5>
+      <hr class="hrCon">
+      <div class="row" style="margin: 0px;">
+        <form class="col s12" method="POST" action="/mail/send/" name="form" >
+          <div class="row" style="margin: 0px;">
+            <div class="input-field col s12 m6 l6">
+              <input id="text" type="text" class="validate" name="firstname" placeholder="first name">
+            </div>
+            <div class="input-field col s12 m6 l6">
+              <input id="text" type="text" class="validate" name="lastname" placeholder="last name">
+            </div>
+            <div class="input-field col s12 m6 l6">
+              <input id="email" type="email" class="validate" name="email" placeholder="email">
+            </div>
+            <div class="input-field col s12 m6 l6">
+              <input id="text" type="text" class="validate" name="tel" placeholder="phone number">
+            </div>
+          </div>
+          <div class="row" style="margin: 0px;">
+           
+              <div class="row" style="margin:0px; ">
+                <div class="input-field col s12">
+                  <textarea id="textarea1" class="materialize-textarea" name="msg" placeholder="messages"></textarea>
+                </div>
+              </div>
+          
+          </div>
+          <div class="row" style="margin: 0px;">
+              <button type="submit" class="waves-effect waves-light btn right submite" >submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="col s12 m6 l6 MarginContect">
+      <h5 class="conForm">Our office</h5>
+      <hr class="hrCon">
+      <i class="material-icons">location_on</i> <span> #24, St. 271, Sangkat Teuk Thla Khan Sen Sok, Phnom Penh</span>
+      <br>
+      <br>
+      <i class="material-icons">phonelink_ring</i> <span> (+855)15 784 844</span>
+      <br><br>
+      <i class="material-icons">contact_mail</i> <span>wpm@women-peacemakers.org</span>
+    </div>
+  </div>
+</div>
+
+<div>
+  <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3908.698912281327!2d104.89050785014074!3d11.573428691743414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31095176107e45fb%3A0xd4050445961ddaaf!2sSmallWorld+Cambodia!5e0!3m2!1sen!2skh!4v1497243872959" frameborder="0" style="border:0; width: 100%; height: 450px;" allowfullscreen></iframe> -->
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d891.2406180760003!2d104.88591408220631!3d11.552770999426135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTHCsDMzJzEwLjAiTiAxMDTCsDUzJzExLjQiRQ!5e1!3m2!1sen!2skh!4v1501154382523" frameborder="0" style="border:0; width: 100%;height: 450px;" allowfullscreen></iframe>
+</div>
+
+{% include template_name+'/footer.html' %} 

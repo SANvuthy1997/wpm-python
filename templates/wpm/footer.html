@@ -1,0 +1,105 @@
+<footer class="page-footer ">
+  <div class="container">
+    <div class="row" style="margin: 0px;">
+      <div class="col s12 m9 l9">
+        <h5 class="footerTitle">Women Peace Makers</h5>
+        <p class="footerAddress"> #24, St. 271, Sangkat Teuk Thla Khan Sen Sok, Phnom Penh </p>
+        <a href="https://www.facebook.com/Women.Peacemakers/" class="socailFooter">
+          <i class="fa fa-facebook-square" aria-hidden="true"></i>&nbsp;<span>Facebook</span>
+        </a>
+        <br>
+        <a href="#" class="socailFooter">
+          <i class="fa fa-linkedin-square" aria-hidden="true"></i>&nbsp;<span>Linkedin</span>
+        </a>
+        <br>
+        <a href="#" class="socailFooter">
+          <i class="fa fa-youtube-square" aria-hidden="true"></i>&nbsp;<span>Youtube</span>
+        </a>
+        <br>
+      </div>
+
+      <div class="col s12 m3 l3 hide-on-small-only">
+        <h5 class="footerTitle1"><a href="#">Sitemaps</a></h5>
+        <div class="row" style="margin-bottom: 5px;">
+          <div class="col s12 m6 l6">
+            <a href="/who-we-are/" class="textLink">Who we are</a>
+          </div>
+          <div class="col s12 m6 l6">
+            <a href="/get-involve/" class="textLink">Get Involved</a>
+          </div>
+        </div>
+
+        <div class="row" style="margin-bottom: 5px;">
+          <div class="col s12 m6 l6">
+            <a href="/what-we-do/" class="textLink">What we do</a>
+          </div>
+          <div class="col s12 m6 l6">
+            <a href="/resources/" class="textLink">Recources</a>
+          </div>
+        </div>
+
+        <div class="row" style="margin-bottom: 5px;">
+          <div class="col s12 m6 l6">
+            <a href="/news/" class="textLink">News</a>
+          </div>
+          <div class="col s12 m6 l6">
+            <a href="/contact/" class="textLink">Contact Us</a>
+          </div>
+        </div>
+
+        <div class="row" style="margin-bottom: 5px;">
+          <div class="col s12 m6 l6">
+            <a href="/blog/" class="textLink">Blog</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row" style="margin: 0px; padding-bottom: 20px;">
+      <div class="col s12 m12 l12">
+        <center><span style="color: #fff;">@2017 WPM. All right Reserved</span></center>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<script>
+    $(document).ready(function(){
+        if (Modernizr.touch) {
+            // show the close overlay button
+            $(".close-overlay").removeClass("hidden");
+            // handle the adding of hover class when clicked
+            $(".img").click(function(e){
+                if (!$(this).hasClass("hover")) {
+                    $(this).addClass("hover");
+                }
+            });
+            // handle the closing of the overlay
+            $(".close-overlay").click(function(e){
+                e.preventDefault();
+                e.stopPropagation();
+                if ($(this).closest(".img").hasClass("hover")) {
+                    $(this).closest(".img").removeClass("hover");
+                }
+            });
+        } else {
+            // handle the mouseenter functionality
+            $(".img").mouseenter(function(){
+                $(this).addClass("hover");
+            })
+            // handle the mouseleave functionality
+            .mouseleave(function(){
+                $(this).removeClass("hover");
+            });
+        }
+    });
+</script>
+
+  <script type="text/javascript" src="/static/{{template_name}}/js/app.js"></script>
+  <script type="text/javascript" src="/static/{{template_name}}/js/highlight.js"></script>
+  <script type="text/javascript" src="/static/{{template_name}}/js/script.js"></script>
+  <script type="text/javascript" src="/static/{{template_name}}/js/modernizr.js"></script>
+</body>
+</html>

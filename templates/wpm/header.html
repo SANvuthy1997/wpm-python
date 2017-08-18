@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Amoogli Admin Page">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" type="text/css" href="/static/{{template_name}}/css/materialize.min.css">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+
+
+  <!-- css files for all amoogli website -->
+  <link rel="stylesheet" type="text/css" href="/static/{{template_name}}/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/static/{{template_name}}/css/owl.carousel.min.css">
+  <link rel="stylesheet" type="text/css" href="/static/{{template_name}}/css/owl.theme.default.min.css">
+  <link rel="stylesheet" type="text/css" href="/static/{{template_name}}/css/examples.css">
+  <link rel="stylesheet" type="text/css" href="/static/{{template_name}}/css/slider-pro.min.css">
+  <link rel="stylesheet" type="text/css" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
+
+    {% if page_name == 'home' %}
+        <title>WPM - Woman Peace Maker</title>
+        <meta name="description" content="Women Peace Makers (WPM) is a non-governmental organization based in Phnom Penh that works on issues of gender and peace across Cambodia. ">
+        <meta name="keywords" content="Cambodia,wpm,woman peace maker,Women Peace Makers (WPM) is a non-governmental organization based in Phnom Penh that works on issues of gender and peace across Cambodia. ">
+        <style>
+            .home{
+              color:#4aa1c8;
+            }
+        </style>
+    {% elif page_name == 'single' %}
+        {%for post in post_object%}
+            <title>{{post.title}} | WPM - Woman Peace Maker</title>
+            <meta name="description" content="
+            {{post.short_description}}, {{post.title}}">
+            <meta name="keywords" content="{{post.keywords}}, {{post.title}}">
+        {%endfor%}
+    {% elif page_name == 'category' %}
+        <title>{{category_name}} | Woman Peace Maker</title>
+        <meta name="description" content="{{category_name}}, Cambodia,wpm,woman peace maker,Women Peace Makers (WPM) is a non-governmental organization based in Phnom Penh that works on issues of gender and peace across Cambodia. ">
+        <meta name="keywords" content="{{category_name}} , Cambodia,wpm,woman peace maker,Women Peace Makers (WPM) is a non-governmental organization based in Phnom Penh that works on issues of gender and peace across Cambodia. ">
+        <style>
+            .{{category_slug}}{
+              color:#4aa1c8;
+            }
+        </style>
+    {% elif page_name == 'page' %}
+        {%for page in page_object%}
+            <title>{{page.title}} | Woman Peace Maker </title>
+            <meta name="description" content="{{page.short_description}}">
+            <meta name="keywords" content="{{page.title}}, {{page.keywords}}">
+            <style>
+            .{{page.slug}}{
+              color:#4aa1c8;
+            }
+        </style>
+        {%endfor%}
+     {%else%}
+        <title>WPM - Woman Peace Maker</title>
+        <meta name="description" content="Cambodia,wpm,woman peace maker,Women Peace Makers (WPM) is a non-governmental organization based in Phnom Penh that works on issues of gender and peace across Cambodia. ">
+        <meta name="keywords" content="Cambodia,wpm,woman peace maker,Women Peace Makers (WPM) is a non-governmental organization based in Phnom Penh that works on issues of gender and peace across Cambodia. ">
+    {% endif %}
+     <link rel="icon" type="image/png" href="/static/wpm/img/logo.png">
+
+  <!-- js files for all amoogli website  -->
+  <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+  <script src="/static/{{template_name}}/js/materialize.min.js"></script>
+  <script type="text/javascript" src="/static/{{template_name}}/js/owl.carousel.min.js"></script>
+  <script type="text/javascript" src="/static/{{template_name}}/js/jquery.sliderPro.min.js"></script>
+  <script src="/static/admin/js/moment.js"></script>
+  
+</head>
+<body>
+
+<!-- BackToTop Button -->
+<a href="#" id="scroll" title="Scroll to Top" class="hide-on-small-only" style="display: none;">Top<span></span></a>
+
+<div class="navbar-fixed">
+  <nav style="display: none;" id="showSearch">
+    <div class="nav-wrapper">
+      <form>
+        <div class="input-field">
+          <input id="search" type="search" required placeholder="Type keyworkd and hit enter...">
+          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+          <i class="material-icons" id="closeBtn">close</i>
+        </div>
+      </form>
+    </div>
+  </nav>
+  <nav>
+    <div class="nav-wrapper">
+      <div class="container1">
+        <a href="/" class="brand-logo">
+          <img src="/static/{{template_name}}/img/logo.png" class="responsive-img vipassaLogo">
+        </a>
+        <!-- <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a> -->
+        <ul class="right hide-on-med-and-down navbarRight">
+          <!-- <li class="dropIndex">
+            <a class="home" href='/'>Home</a>
+          </li> -->
+          <li class="dropIndex">
+            <a href='/who-we-are' class='who-we-are'>Who we are</a>
+          </li>
+          <li class="dropIndex">
+            <a href="/what-we-do" class="what-we-do">What we do</a>
+          </li>
+          <li><a href="/news" class="news">News</a></li>
+          <li><a href="/resources" class="resources">Resources</a></li>
+          <li><a href="/contact" class="contact">Contact</a></li>
+          <li class="Donate" class="donate"><a href="/donate">Donate</a></li>
+        </ul>
+
+        <ul id="slide-out" class="side-nav">
+          <li class="dropIndex">
+            <a class="home" href='/'>Home</a>
+          </li>
+          <li class="dropIndex">
+            <a href='/who-we-are' class='who-we-are'>Who we are</a>
+          </li>
+          <li class="dropIndex">
+            <a href="/what-we-do" class="what-we-do">What we do</a>
+          </li>
+          <li><a href="/news" class="news">News</a></li>
+          <li><a href="/resources" class="resources">Resources</a></li>
+          <li><a href="/contact" class="contact">Contact</a></li>
+          <li class="Donate" class="donate"><a href="/donate">Donate</a></li>
+        </ul>
+        <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons" style="color: #333">menu</i></a>
+
+
+      </div>
+    </div>
+  </nav>
+</div>
+

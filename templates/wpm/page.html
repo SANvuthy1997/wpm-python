@@ -1,0 +1,424 @@
+{% include template_name+'/header.html' %} 
+{%for page in page_object%}
+<div style="background-image: url('/static/{{template_name}}/img/banner.jpg');" class="bannerPage">
+  <h5 class="whowearePage">{{page.title}}</h5>
+</div>
+
+<!-- {%if not pages%}
+<div class="container PageCon" style="background-color: #ddd; margin-top: 20px; border-radius: 4px;">
+  <div class="row">
+    <div class="col s12 m12 l12">
+      <div class="row" style="margin: 0px; margin-top: -30px;">
+          
+            {{page.description|safe}}
+      </div>
+    </div>
+
+  </div>
+
+</div>
+{%endif%} -->
+{%endfor%}
+
+<!-- For WHO WE ARE  -->
+{%if pages%}
+  
+<div class="container1">
+  {% for page in pages[0] %}
+  <div class="backPage">
+    <center>
+      <h6 class="titlepage">{{page.title}}</h6>
+      <p class="textPage">
+      {{page.description|safe}}
+      </p>
+    </center>
+  </div>
+  {%endfor%}
+</div>
+
+<div class="container1" style="padding-top:25px;">
+  <div class="row">
+      {% for page in pages[1] %}
+        <div class="col s12 m4 l4">
+          <center> 
+            <h6 class="ourVision">{{page.title}}</h6>
+          </center>
+                {{page.description|safe}}
+        </div>
+      {%endfor%}
+
+      {% for page in pages[5] %}
+        <div class="col s12 m4 l4">
+          <center> 
+            <h6 class="ourVision">{{page.title}}</h6>
+          </center>
+            {{page.description|safe}}
+        </div>
+      {%endfor%}
+
+      {% for page in pages[2] %}
+        <div class="col s12 m4 l4">
+          <center> 
+            <h6 class="ourVision">{{page.title}}</h6>
+          </center>
+            <p>
+                {{page.description|safe}}
+            </p>
+        </div>
+      {%endfor%}
+    </div>
+  </div>
+
+  <div class="backWhat1">
+    <div class="row" style="margin: 0px;">
+    {% for page in pages[6] %}
+      <div class="col s12 m12 l12" style="padding: 0px">
+        <div class="HistoryBack">
+          <center><h5 class="HistoryTitle">{{page.title}}</h5></center>
+          <p class="ourHistory">
+            WPM began as a small working group in 2000, mostly comprised of female university students concerned about violence against women in their communities. In 2003, we formally registered as an NGO in Cambodia and focused our efforts on delivering trainings on conflict resolution and women rights protection for women and rural communities. At the same time, we sought to build networks of women and youth to engage in dialogue on women rights and contribute to positive social change. 
+            <br> <br>Today’s WPM is the culmination of over a decade and a half of action and learning in the field. We have learned that although women are more likely to be victims of violence and require specific support, they are also key agents of change in their communities and in society at large. We have also learned that men, who may often be the perpetrators of gender-based violence, are fundamental allies in fighting for gender equality and engaging in conflict transformation. Our efforts to achieve gender equality and peace, and to leverage female leadership to transform conflict at every level of society, require the support and collaboration of everyone, including the youth. 
+          </p>
+        </div>
+      </div>
+    {%endfor%}
+    </div>
+  </div>
+
+  <div class="container1">
+    <h5 class="peopleText">It's People</h5>
+    <center><p class="textPoeple">Our dedicated WPM staff members implement projects and initiatives and run day-to-day operations to ensure we function smoothly and effectively. </p></center>
+    <div class="row">
+      {%for member in members%}
+        {%if member.duty == "It's People"%}
+        <div class="col s6 m3 l3">
+          <a href="#modal{{member.id}}" class="modal-trigger BackImage" >
+            <img src="/static/images/images/{{member.feature_image}}">
+            <h6 class="namePeople">{{member.name}}</h6>
+            <h6 class="position">{{member.possition}}</h6>
+          </a>
+        </div>
+        {%endif%}
+      {%endfor%}
+
+    </div>
+
+  </div>
+
+  <div class="container1">
+    <h5 class="peopleText">previous volunteers</h5>
+    <center><p class="textPoeple">WPM and the community we serve cannot thanks enough the valuable time and effort contributed by our volunteers. We thus dedicated this entire page to honor our volunteers. </p></center>
+    <div class="row">
+      {%for member in members%}
+        {%if member.duty == "previous volunteers"%}
+        <div class="col s6 m3 l3">
+          <a href="#modal{{member.id}}" class="modal-trigger BackImage" >
+            <img src="/static/images/images/{{member.feature_image}}">
+            <h6 class="namePeople">{{member.name}}</h6>
+            <h6 class="position">{{member.possition}}</h6>
+          </a>
+        </div>
+        {%endif%}
+      {%endfor%}
+
+    </div>
+
+  </div>
+
+  <div class="container1">
+    <h5 class="peopleText">Board of directors</h5>
+    <center><p class="textPoeple">WPM is governed by a group of dedicated and well-known Cambodian and international leaders working in the areas of gender and peacebuilding. Our Board provides indispensable guidance and direction to our organization and work. </p></center>
+    <div class="row">
+      {%for member in members%}
+        {%if member.duty == "Board of directors"%}
+        <div class="col s6 m3 l3">
+          <a href="#modal{{member.id}}" class="modal-trigger BackImage" >
+            <img src="/static/images/images/{{member.feature_image}}">
+            <h6 class="namePeople">{{member.name}}</h6>
+            <h6 class="position">{{member.possition}}</h6>
+          </a>
+        </div>
+        {%endif%}
+      {%endfor%}
+
+    </div>
+
+  </div>
+
+  <div class="container1">
+    <h5 class="peopleText">Advisors</h5>
+    <center><p class="textPoeple">WPM receives advisory support on programming, organizational development, and project development from its advisors who are experts on relevant gender and peacebuilding issues as well as organizational processes.</p></center>
+    <div class="row">
+      {%for member in members%}
+        {%if member.duty == "Advisors"%}
+        <div class="col s6 m3 l3">
+          <a href="#modal{{member.id}}" class="modal-trigger BackImage" >
+            <img src="/static/images/images/{{member.feature_image}}" class="responsive-img">
+            <h6 class="namePeople">{{member.name}}</h6>
+            <h6 class="position">{{member.possition}}</h6>
+          </a>
+        </div>
+        {%endif%}
+      {%endfor%}
+
+    </div>
+
+
+    <!-- Modal Structure -->
+    {%for member in members%}
+      <div id="modal{{member.id}}" class="modal">
+        <div class="modal-content">
+          <div class="row" style="margin: 0px;">
+            <div class="imgModal col s12 m2 l2"><img src="/static/images/images/{{member.feature_image}}"></div>
+            <div class="col s12 m10 l10 textModal">
+              <h5>{{member.name}}</h5>
+              <h6>{{member.possition}}</h6>
+              <a href="{{member.facebook}}"><i class="fa fa-facebook-square faModal" aria-hidden="true"></i></a>
+              <a href="{{member.linkin}}"><i class="fa fa-linkedin-square faModal" aria-hidden="true"></i></a>
+              <br><br>
+            </div>
+            {{member.detail|striptags}}
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">cloase</a>
+        </div>
+      </div>
+    {%endfor%}
+  </div>
+
+
+  {%for page in pages[3] %}
+  <div class="backPartner">
+    <div class="container1">
+      <h5 class="peopleText">{{page.title}}</h5>
+      <center><p class="textPoeple">
+      {{page.description|safe}}
+        </p></center>
+      <div class="row">
+      {%for partner in partners%}
+        <div class="col s12 m3 l3">
+        <a href="{{partner.url}}">
+          <img src="/static/images/images/{{partner.feature_image}}" class="responsive-img">
+        </a>
+        </div>
+      {%endfor%}
+      </div>
+    </div>
+  </div>
+  {%endfor%}
+
+  <div class="hide-on-small-only">
+
+    <div style="background-image: url(/static/{{template_name}}/img/img1Down.jpg);" class="imgTest">
+      <div class="BackDonateIndex" style="">
+        <h5 class="h5Donate">Your donation will allow us to expand our targets and contribute to making a different in the community we serve – for gender equality and peace.</h5>
+        <button class="btn btnDonateIndex"> Donate Us</button>
+      </div>
+    </div>
+  </div>
+
+{%endif%}
+
+
+
+
+
+
+{%if projects %}
+  <div class="container" style="margin-top: 10px;">
+    <div class="row">
+      <div class="col s12 m12 l12">
+        <div class="paddingTest">
+        {% for project in projects[4] %}
+          <center>
+            <h6 class="whoweare">{{project.title}}</h6>
+          </center>
+          {{project.description|safe}}
+        {%endfor%}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="background-color: #fafafa; padding: 20px 40px;">
+    <div class="row">
+      {% for project in projects[6] %}
+      <div class="col s12 m12 l12">
+        <center>
+          <h6 class="whoweare">{{project.title}}</h6>
+          <p class="MissionPage1">
+            {{project.description|striptags}}
+          </p>
+        </center>
+      </div>
+      {%endfor%}
+    </div>
+
+    <div class="row">
+      {% for project in projects[0] %}
+      <div class="col s12 m4 l4">
+        <center>
+          <img src="/static/{{template_name}}/img/b1.png" class="responsive-img">
+          <h6 class="whoweare">{{project.title}}</h6>
+        </center>
+          {{project.description|striptags}}
+      </div>
+      {%endfor%}
+
+      {% for project in projects[1] %}
+      <div class="col s12 m4 l4">
+        <center>
+          <img src="/static/{{template_name}}/img/B2.png" class="responsive-img">
+          <h6 class="whoweare">{{project.title}}</h6>
+        </center>
+          <p>
+            {{project.description|striptags}}
+          </p>
+      </div>
+      {%endfor%}
+
+      {% for project in projects[2] %}
+      <div class="col s12 m4 l4">
+        <center>
+          <img src="/static/{{template_name}}/img/b3.png" class="responsive-img">
+          <h6 class="whoweare">{{project.title}}</h6>
+        </center>
+          <p>
+            {{project.description|striptags}}
+          </p>
+      </div>
+      {%endfor%}
+
+    </div>
+  </div>
+
+  <div class="container" style="margin-top: 20px;">
+
+    <div class="row">
+      {% for project in projects[3] %}
+      <div class="col s12 m12 l12">
+        <center>
+          <h6 class="whoweare">{{project.title}}</h6>
+          <p class="MissionPage1">
+            {{project.description|striptags}}
+          </p>
+        </center>
+      </div>
+      {%endfor%}
+    </div>
+  </div> 
+  <!-- end container -->
+
+  <!-- Three boxes -->
+
+  <div class="DoBack">
+    <div class="">
+      <div class="row" style="margin: 0px; background-color:rgba(221, 221, 221, 0.45);">
+      {% for project in projects[5] %}
+        <div class="col s12 m6 l6" style="padding: 0px; margin-bottom: -7px">
+          <img src="/static/images/images/{{project.feature_image}}" class="responsive-img imgThree">
+        </div>
+        <div class="col s12 m6 l6" style="padding:15px 30px;">
+          
+              <h6 class="whoweare">{{project.title}}</h6>
+                {{project.description|striptags |truncate(700)}}
+
+              <br><br>
+              <a class="btn ReadMore" href="/{{project.slug}}"> Learn More</a>
+              
+          {%endfor%}
+        </div>
+      </div>
+    </div>
+
+    <!-- <script type="text/javascript">
+      $(document).ready(function(){
+        $(".whoweare").click(function(){
+          $(this).slideToggle();
+        });
+      });
+    </script> -->
+
+    <div class="">
+      <div class="row" style="margin: 0px; background-color:rgba(221, 221, 221, 0.45);">
+        <div class="col s12 m6 l6" style="padding:15px 30px;">
+          {% for project in projects[7] %}
+              <h6 class="whoweare">{{project.title}}</h6>
+                {{project.description|striptags |truncate(700)}}
+
+                <br><br>
+              <a class="btn ReadMore" href="/{{project.slug}}"> Learn More</a>
+          
+        </div>
+
+        <div class="col s12 m6 l6" style="padding: 0px; margin-bottom: -7px;">
+          <img src="/static/images/images/{{project.feature_image}}" class="responsive-img imgThree">
+        </div>
+
+        {%endfor%}
+
+      </div>
+    </div>
+
+    <div class="" style="margin-top: -15px; ">
+      <div class="row" style="margin: 0px; background-color:rgba(221, 221, 221, 0.45);">
+        {% for project in projects[8] %}
+        <div class="col s12 m6 l6" style="padding: 0px; margin-bottom: -7px">
+          <img src="/static/images/images/{{project.feature_image}}" class="responsive-img imgThree">
+        </div>
+        <div class="col s12 m6 l6" style="padding:15px 30px;">
+          
+              <h6 class="whoweare">{{project.title}}</h6>
+                {{project.description|striptags |truncate(700)}}
+
+              <br><br>
+              <a class="btn ReadMore" href="/{{project.slug}}"> Learn More</a>
+              
+          {%endfor%}
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+
+
+  <!-- <div class="container1">
+    <div class="row">
+      <center>
+        <h4>
+          <b>
+            OUR PROJECTS
+          </b>
+        </h4>
+      </center>
+      {%for project in projects%}
+          <div class="col s12 m6 l6">
+            <div class="row" style="margin: 0px; background-color: #f5f5f5;">
+              <img src="/static/images/images/{{project.feature_image}}" class="responsive-img">
+              <div class="HistoryBack">
+                <h5 class="HistoryTitle">{{project.title}}</h5>
+                <p>
+                  {{project.description|striptags|truncate(300)}}
+                </p>
+                <a href="/{{project.slug}}" class="btn find"> Read More</a>
+              </div>
+            </div>
+          </div>
+      {%endfor%}
+    </div>
+  </div> -->
+{%endif%}
+<!-- Modal Trigger -->
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+    $('.modal').modal();
+  });
+</script>
+<div style="margin-top: 1px;"></div>
+{% include template_name+'/footer.html' %}
