@@ -825,7 +825,21 @@ a .faModal{
     padding: 0px !important;
 }
 
-
+.textInvolve{
+  font-size: 16px;
+}
+.imgSlide{
+  height: 173px !important;
+  width: 100% !important;
+}
+.imgSlideBig{
+  height: 368px !important;
+  width: 100% !important;
+}
+.imgThree{
+  height: 400px !important;
+  width: 100% !important;
+}
 
 @media only screen and (max-width: 750px){
 
@@ -970,21 +984,22 @@ nav ul a:focus{
     height: 200px;
     margin-top: -5px;
 }
+.imgSlideBig{
+  height: 230px !important;
+  width: 100% !important;
+}
+.imgSlide{
+  height: 230px !important;
+  width: 100% !important;
+}
+.MissionPage1{
+  padding: 10px 10px;
+}
+.imgThree{
+  height: 230px !important;
+  width: 100% !important;
+  margin-bottom: 15px;
+}
  
 }
 
-.textInvolve{
-  font-size: 16px;
-}
-.imgSlide{
-  height: 173px !important;
-  width: 100% !important;
-}
-.imgSlideBig{
-  height: 368px !important;
-  width: 100% !important;
-}
-.imgThree{
-  height: 400px !important;
-  width: 100% !important;
-}
