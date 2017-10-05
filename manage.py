@@ -1574,12 +1574,22 @@ def single(slug='',pagination=1):
 		page1 = Page.query.filter_by(slug='take-action')
 		pages =[page1,page2,page3,page4]
 
-		posts=Post.query.join(Category,Post.category_id == Category.id).filter(Category.slug=='get-involved').order_by(Post.id.desc()).limit(limit).offset(int(int(int(pagination)-1)*limit))
-		pagin=math.ceil((Post.query.join(Category,Post.category_id == Category.id).filter(Category.slug=='get-involved').count())/limit)
-		if(math.ceil(Post.query.join(Category,Post.category_id == Category.id).filter(Category.slug=='get-involved').count())%limit != 0 ):
+		post1=Post.query.join(Category,Post.category_id == Category.id).filter(Category.slug=='take-action').order_by(Post.id.desc()).limit(limit).offset(int(int(int(pagination)-1)*limit))
+		pagin=math.ceil((Post.query.join(Category,Post.category_id == Category.id).filter(Category.slug=='take-action').count())/limit)
+		if(math.ceil(Post.query.join(Category,Post.category_id == Category.id).filter(Category.slug=='take-action').count())%limit != 0 ):
 			pagin=int(pagin+1)
 
-		return render_template(template+"/involve.html",page_name='training',pages=pages,category_slug='training',category_name='training',posts=posts,pagin=int(pagin),current_pagin=int(pagination))
+		post2=Post.query.join(Category,Post.category_id == Category.id).filter(Category.slug=='volunteer').order_by(Post.id.desc()).limit(limit).offset(int(int(int(pagination)-1)*limit))
+		pagin=math.ceil((Post.query.join(Category,Post.category_id == Category.id).filter(Category.slug=='volunteer').count())/limit)
+		if(math.ceil(Post.query.join(Category,Post.category_id == Category.id).filter(Category.slug=='volunteer').count())%limit != 0 ):
+			pagin=int(pagin+1)
+
+		post3=Post.query.join(Category,Post.category_id == Category.id).filter(Category.slug=='donate-us').order_by(Post.id.desc()).limit(limit).offset(int(int(int(pagination)-1)*limit))
+		pagin=math.ceil((Post.query.join(Category,Post.category_id == Category.id).filter(Category.slug=='donate-us').count())/limit)
+		if(math.ceil(Post.query.join(Category,Post.category_id == Category.id).filter(Category.slug=='donate-us').count())%limit != 0 ):
+			pagin=int(pagin+1)
+
+		return render_template(template+"/involve.html",page_name='training',pages=pages,category_slug='training',category_name='training',post1=post1,post2=post2,post3=post3,pagin=int(pagin),current_pagin=int(pagination))
 	
 	elif slug=='about-us':
 		whatwedo = Page.query.filter_by(slug='what-we-do')
@@ -1717,6 +1727,6 @@ def search():
 
 
 if __name__ == '__main__':
-	 app.run(debug = True,host='0.0.0.0')
+	app.run(debug = True,host='0.0.0.0')
 #replace white space:
 #http://docs.python-requests.org/en/master/user/quickstart/
