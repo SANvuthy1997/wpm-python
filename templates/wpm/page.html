@@ -1,6 +1,6 @@
 {% include template_name+'/header.html' %} 
 {%for page in page_object%}
-<div style="background-image: url('/static/{{template_name}}/img/banner.jpg');" class="bannerPage">
+<div style="background-image: url('/static/{{template_name}}/img/img34.jpg');" class="bannerPage">
   <h5 class="whowearePage">{{page.title}}</h5>
 </div>
 
@@ -86,7 +86,7 @@
   </div>
 
   <div class="container1">
-    <h5 class="peopleText">It's People</h5>
+    <h5 class="peopleText">Our Members</h5>
     <center><p class="textPoeple">Our dedicated WPM staff members implement projects and initiatives and run day-to-day operations to ensure we function smoothly and effectively. </p></center>
     <div class="row">
       {%for member in members%}
@@ -106,7 +106,7 @@
   </div>
 
   <div class="container1">
-    <h5 class="peopleText">previous volunteers</h5>
+    <h5 class="peopleText">Previous Volunteers</h5>
     <center><p class="textPoeple">WPM and the community we serve cannot thanks enough the valuable time and effort contributed by our volunteers. We thus dedicated this entire page to honor our volunteers. </p></center>
     <div class="row">
       {%for member in members%}
@@ -126,11 +126,11 @@
   </div>
 
   <div class="container1">
-    <h5 class="peopleText">Board of directors</h5>
+    <h5 class="peopleText">Board of Directors</h5>
     <center><p class="textPoeple">WPM is governed by a group of dedicated and well-known Cambodian and international leaders working in the areas of gender and peacebuilding. Our Board provides indispensable guidance and direction to our organization and work. </p></center>
     <div class="row">
       {%for member in members%}
-        {%if member.duty == "Board of directors"%}
+        {%if member.duty == "Board of Directors"%}
         <div class="col s6 m3 l3">
           <a href="#modal{{member.id}}" class="modal-trigger BackImage" >
             <img src="/static/images/images/{{member.feature_image}}">
@@ -319,7 +319,7 @@
         <div class="col s12 m6 l6" style="padding: 0px; margin-bottom: -7px">
           <img src="/static/images/images/{{project.feature_image}}" class="responsive-img imgThree">
         </div>
-        <div class="col s12 m6 l6" style="padding:15px 30px;">
+        <div class="col s12 m6 l6" style="padding:15px 30px; text-align: justify;">
           
               <h6 class="whoweare">{{project.title}}</h6>
                 {{project.description|striptags |truncate(700)}}
@@ -342,7 +342,7 @@
 
     <div class="">
       <div class="row" style="margin: 0px; background-color:rgba(221, 221, 221, 0.45);">
-        <div class="col s12 m6 l6" style="padding:15px 30px;">
+        <div class="col s12 m6 l6" style="padding:15px 30px; text-align: justify;">
           {% for project in projects[7] %}
               <h6 class="whoweare">{{project.title}}</h6>
                 {{project.description|striptags |truncate(700)}}
@@ -367,7 +367,7 @@
         <div class="col s12 m6 l6" style="padding: 0px; margin-bottom: -7px">
           <img src="/static/images/images/{{project.feature_image}}" class="responsive-img imgThree">
         </div>
-        <div class="col s12 m6 l6" style="padding:15px 30px;">
+        <div class="col s12 m6 l6" style="padding:15px 30px; text-align: justify;">
           
               <h6 class="whoweare">{{project.title}}</h6>
                 {{project.description|striptags |truncate(700)}}

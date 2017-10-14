@@ -4,7 +4,7 @@ body{
 }
 p{
   font-family: Poppins !important;
-  margin:8px !important;
+  margin:0px !important;
 }
 /* BackToTop button css */
 #scroll {
@@ -204,6 +204,7 @@ nav ul a:hover {
 }
 .thisTitle{
     font-weight: bold;
+    color: #4aa1c8;
 }
 .bannerPage{
     background-attachment: fixed;
@@ -690,6 +691,7 @@ a .faModal{
 .ourHistory{
   padding: 0px 15%;
   font-size: 15px;
+  text-align: justify;
 }
 .PageCon{
   padding: 30px 80px 0px 80px;
@@ -814,6 +816,7 @@ a .faModal{
 .paddingTest{
   padding: 15px 150px; 
   margin-top: 20px;
+  text-align: justify;
 }
 .MissionPage1{
   padding: 10px 150px;
@@ -1001,5 +1004,12 @@ nav ul a:focus{
   margin-bottom: 15px;
 }
  
+}
+
+div figure{
+  margin: 10px;
+}
+div figure img{
+  width: 100%;
 }
 
