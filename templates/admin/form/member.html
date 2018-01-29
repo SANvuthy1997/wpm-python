@@ -88,7 +88,7 @@
               <div class="editable" style="margin: 0px;">
                 <p>{{p.detail|safe}}</p>
               </div>
-              <textarea name="detail" id="detail" style="display:none"></textarea>
+              <textarea name="detail" id="summernote"></textarea>
           </div>
 
           <br>
@@ -179,7 +179,7 @@
             <div class="col-xs-9 col-sm-10 col-md-10 col-lg-10" style="padding: 5px; margin: 0px;">
               <div class="editable" style="margin: 0px;">
               </div>
-              <textarea name="detail" id="detail" style="display:none"></textarea>
+              <textarea name="detail" id="summernote"></textarea>
           </div>
 
           <br>
@@ -239,12 +239,6 @@ $('input#feature_image').change(function(){
 });
 </script>
 <script type="text/javascript">
-  function check(){
-    var data = $('.editable.medium-editor-insert-plugin').html();
-    data=data.split('<div class="medium-insert-buttons"')[0];
-    $('textarea#detail').html(data);
-    return true;
-  }
 
 
   //input only number

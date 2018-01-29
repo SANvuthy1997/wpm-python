@@ -15,21 +15,26 @@
 <link rel="stylesheet" href="/static/admin/css/default.css" id="medium-editor-theme">
 <!-- Font Awesome for awesome icons. You can redefine icons used in a plugin configuration -->
 <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+ <!-- include summernote css/js -->
+  <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.css" rel="stylesheet">
 <!-- The plugin itself -->
 <link rel="stylesheet" href="/static/admin/css/medium-editor-insert-plugin.min.css">
 <!-- JS -->
 <script src="/static/admin/js/jquery.min.js"></script>
+<!-- 
 <script src="/static/admin/js/medium-editor.js"></script>
 <script src="/static/admin/js/handlebars.runtime.min.js"></script>
-<script src="/static/admin/js/jquery-sortable-min.js"></script>
+<script src="/static/admin/js/jquery-sortable-min.js"></script> -->
 <!-- Unfortunately, jQuery File Upload Plugin has a few more dependencies itself -->
-<script src="/static/admin/js/jquery.ui.widget.js"></script>
+<!-- <script src="/static/admin/js/jquery.ui.widget.js"></script>
 <script src="/static/admin/js/jquery.iframe-transport.js"></script>
 <script src="/static/admin/js/jquery.fileupload.js"></script>
-<script src="/static/admin/js/moment.js"></script>
+<script src="/static/admin/js/moment.js"></script> -->
 <!-- The plugin itself -->
-<script src="/static/admin/js/medium-editor-insert-plugin.min.js"></script>
-<script src="/static/admin/js/extension-table.js"></script>
+<!-- <script src="/static/admin/js/medium-editor-insert-plugin.min.js"></script>
+<script src="/static/admin/js/extension-table.js"></script> -->
+<!-- include summernote css/js -->
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js"></script>
 
  <link rel="stylesheet" type="text/css" href="/static/admin/css/style.css">
 
@@ -118,4 +123,10 @@
       </ul>
     </nav>
   </div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#summernote').summernote();
+  });
+</script>
   

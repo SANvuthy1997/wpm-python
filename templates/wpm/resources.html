@@ -1,6 +1,6 @@
 {% include template_name+'/header.html' %} 
 
-<div style="background-image: url(/static/{{template_name}}/img/banner.jpg);" class="bannerPage">
+<div style="background-image: url(/static/{{template_name}}/img/resources.jpg);" class="bannerPage">
   <h5 class="whowearePage">Resources</h5>
 </div>
 
@@ -8,13 +8,13 @@
   <div class="row" style="padding-top: 20px;">
     <div style="background-color: #fafafa;padding: 15px 25px;">
     {%for page in pages%}
-      <center><h5 class="resourceTitle">{{page.title}}</h5></center>
+      <!-- <center><h5 class="resourceTitle">{{page.title}}</h5></center> -->
       <center>{{page.description|safe}}</center>
     {%endfor%}
     </div>
 
     <br>
-  {% for resource in posts %}
+  <!-- {% for resource in posts %}
 
     <div class="col s12 m3 l3 MarginNews">
       <div id="effect-5" class="effects clearfix">
@@ -32,7 +32,100 @@
       <div class="row" style="margin: 0px;"></div>
     {%endif%}
 
-  {%endfor%}
+  {%endfor%} -->
+
+    <center>
+      <h5 class="resourceTitles">publications</h5>
+    </center>
+
+    {% for resource in posts %}
+    <div class="row">
+      <div class="col s12 m4 l4 MarginNews">
+        <img src="/static/images/images/{{resource.feature_image}}" class="responsive-img">
+        <small>Date: &nbsp;
+
+          <span class="show_date">
+            {{resource.published_at}}
+          </span>
+          <script type="text/javascript">
+            var dateTime = "{{resource.published_at}}";
+            dateTime = dateTime.split(":");
+            $('.show_date').html(dateTime[0]);
+          </script>
+        </small>
+
+
+        <h6 class="thisTitle">{{resource.title}}</h6>
+        {{resource.description|striptags|truncate(80)}}
+        
+        <p style="margin-left: 0px !important;margin-top: 10px !important">
+          <a href="/{{resource.slug}}" class="readMore">Read More</a>
+        </p>
+      </div>
+    </div>
+    {%endfor%}
+
+    <center>
+      <h5 class="resourceTitles">Videos</h5>
+    </center>
+
+    {% for resource in videos %}
+    <div class="row">
+      <div class="col s12 m4 l4 MarginNews">
+        <img src="/static/images/images/{{resource.feature_image}}" class="responsive-img">
+        <small>Date: &nbsp;
+
+          <span class="show_date">
+            {{resource.published_at}}
+          </span>
+          <script type="text/javascript">
+            var dateTime = "{{resource.published_at}}";
+            dateTime = dateTime.split(":");
+            $('.show_date').html(dateTime[0]);
+          </script>
+        </small>
+
+
+        <h6 class="thisTitle">{{resource.title}}</h6>
+        {{resource.description|striptags|truncate(80)}}
+        
+        <p style="margin-left: 0px !important;margin-top: 10px !important">
+          <a href="/{{resource.slug}}" class="readMore">Read More</a>
+        </p>
+      </div>
+    </div>
+    {%endfor%}
+
+    <center>
+      <h5 class="resourceTitles">Reports</h5>
+    </center>
+
+    {% for resource in reports %}
+    <div class="row">
+      <div class="col s12 m4 l4 MarginNews">
+        <img src="/static/images/images/{{resource.feature_image}}" class="responsive-img">
+        <small>Date: &nbsp;
+
+          <span class="show_date">
+            {{resource.published_at}}
+          </span>
+          <script type="text/javascript">
+            var dateTime = "{{resource.published_at}}";
+            dateTime = dateTime.split(":");
+            $('.show_date').html(dateTime[0]);
+          </script>
+        </small>
+
+
+        <h6 class="thisTitle">{{resource.title}}</h6>
+        {{resource.description|striptags|truncate(80)}}
+        
+        <p style="margin-left: 0px !important;margin-top: 10px !important">
+          <a href="/{{resource.slug}}" class="readMore">Read More</a>
+        </p>
+      </div>
+    </div>
+    {%endfor%}
 
   </div>
 </div>

@@ -205,15 +205,14 @@ nav ul a:hover {
 .thisTitle{
     font-weight: bold;
     color: #4aa1c8;
+    line-height: 20px;
 }
-.bannerPage{
-    background-attachment: fixed;
-    width: 100%;
-    height: 50vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.resourceTitles{
+  text-transform: uppercase;
+  margin-bottom: 35px;
+}
+.slider .slides li .caption{
+  top: 25% !important;
 }
 .backPartner{
     background-color: #ddd;
@@ -264,8 +263,19 @@ p{
   font-size: 18px;
   margin-bottom: 10px;
   color: #333;
-  font-weight: bold;
+  font-weight: normal;
   text-transform: uppercase;
+}
+
+.whoweare11{
+  font-size: 37px;
+  margin-bottom: 10px;
+  color: #fff;
+  font-weight: bolder;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0px 20px;
+  line-height: 50px;
 }
 .footerWoman{
     color: #fff;
@@ -308,7 +318,7 @@ p{
     color: #fff;
     font-size: 18px;
     border-radius: 4px;
-    width: 70%;
+    width: 85%;
 }
 .textBan{
     color: #333;
@@ -396,11 +406,34 @@ footer.page-footer .footer-copyright{
 .bannerPage{
 	background-attachment: fixed;
 	width: 100%;
-	height: 50vh;
+	height: 70vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+  background-position: center;
+  background-size: cover;
+  -webkit-box-shadow: inset 13px 11px 211px 200px rgba(0,0,0,0.75);
+  -moz-box-shadow: inset 13px 11px 211px 200px rgba(0,0,0,0.75);
+  box-shadow: inset 13px 11px 211px 200px rgba(0,0,0,0.75);
+}
+.whatwedoTitle{
+  background-attachment: fixed;
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-position: center;
+  background-size: cover;
+}
+.singleTitle1{
+  font-weight: bolder;
+  padding: 0px 16px;
+  line-height: 40px;
+  color: #fff;
+  text-transform: uppercase;
 }
 nav ul a:focus {
     transition: background-color .3s;
@@ -765,7 +798,7 @@ a .faModal{
 }
 .imgTest{
   width: 100%;
-  height: 500px;
+  height: 550px;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -814,12 +847,12 @@ a .faModal{
   z-index: 997;
 }
 .paddingTest{
-  padding: 15px 150px; 
-  margin-top: 20px;
+  padding: 15px 130px; 
+  margin-top: 0px;
   text-align: justify;
 }
 .MissionPage1{
-  padding: 10px 150px;
+  padding: 10px 15px;
 }
 .input-field label {
     color: #4aa1c8 !important;
@@ -858,7 +891,10 @@ a .faModal{
 
 .MissionPage1{
   padding: 10px 15px;
-  text-align: left;
+  text-align: justify;
+}
+.whoweareText{
+  text-align: justify;
 }
 .marginTopIndex{
   margin-top: 20px;

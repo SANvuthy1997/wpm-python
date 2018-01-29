@@ -1535,12 +1535,14 @@ def book_template(slug=''):
 def single(slug='',pagination=1):
 	if slug=='resources':
 		pages = Page.query.filter_by(slug='resources')
-		posts=Post.query.join(Category,Post.category_id == Category.id).filter(Category.slug=='resources').order_by(Post.id.desc()).limit(limit).offset(int(int(int(pagination)-1)*limit))
+		posts=Post.query.join(Category,Post.category_id == Category.id).filter(Category.slug=='publications').order_by(Post.id.desc()).limit(limit).offset(int(int(int(pagination)-1)*limit))
+		videos=Post.query.join(Category,Post.category_id == Category.id).filter(Category.slug=='videos').order_by(Post.id.desc()).limit(limit).offset(int(int(int(pagination)-1)*limit))
+		reports=Post.query.join(Category,Post.category_id == Category.id).filter(Category.slug=='reports').order_by(Post.id.desc()).limit(limit).offset(int(int(int(pagination)-1)*limit))
 		pagin=math.ceil((Post.query.join(Category,Post.category_id == Category.id).filter(Category.slug=='resources').count())/limit)
 		if(math.ceil(Post.query.join(Category,Post.category_id == Category.id).filter(Category.slug!='resources').count())%limit != 0 ):
 			pagin=int(pagin+1)
 
-		return render_template(template+'/resources.html',page_name='category',category_name='Resources',category_slug="resources",posts=posts,pages=pages,pagin=int(pagin),current_pagin=int(pagination))
+		return render_template(template+'/resources.html',page_name='category',category_name='publications',category_slug="resources",posts=posts,videos=videos,reports=reports,pages=pages,pagin=int(pagin),current_pagin=int(pagination))
 	elif slug=='news':
 		posts=Post.query.join(Category,Post.category_id == Category.id).filter(Category.slug=='news').order_by(Post.id.desc()).limit(limit).offset(int(int(int(pagination)-1)*limit))
 		pagin=math.ceil((Post.query.join(Category,Post.category_id == Category.id).filter(Category.slug=='news').count())/limit)
@@ -1565,6 +1567,9 @@ def single(slug='',pagination=1):
 		return render_template(template+'/partners.html',partners=partners)
 	elif slug=='contact':
 		return render_template(template+"/contact.html",page_name="category",category_name="Contact",category_slug='contact')
+	elif slug=='donate':
+		donate= Page.query.filter_by(slug='your-contribution-matters')
+		return render_template(template+"/donate.html",page_name="category",category_name="Contact",category_slug='donate',donate=donate)
 	
 	pages=[]
 	if slug=='get-involve':
