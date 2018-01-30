@@ -103,7 +103,8 @@ $(document).ready(function(){
       {%if loop.index==1%}
         <div class="col s12 m6 l6 marginBottom">
         <a href="/{{post.slug}}">
-          <img src="/static/images/images/{{post.feature_image}}" class="responsive-img imgSlideBig">
+          <img src="/static/images/images/{{post.feature_image}}" class="responsive-img "> 
+          <!-- imgSlideBig -->
           <div class="imgNews">
             <div class="backNews">
               <h6 class="textNews"><a href="/{{post.slug}}">{{post.title}}</a></h6>
@@ -111,7 +112,6 @@ $(document).ready(function(){
           </div>
         </a>
         </div>
-
       {%else%}
             {%if loop.index==2 or loop.index==4 or loop.index==6%}
         <div class="col s12 m6 l6">
@@ -119,7 +119,8 @@ $(document).ready(function(){
           <div class="row" style="margin-bottom: 35px;">
             {%endif%}
             <div class="col s12 m6 l6 marginBottom">
-              <img src="/static/images/images/{{post.feature_image}}" class="responsive-img imgSlide">
+              <img src="/static/images/images/{{post.feature_image}}" class="responsive-img">
+              <!-- imgSlide -->
               <div class="imgNews">
                 <div class="backNews">
                   <h6 class="textNews"><a href="/{{post.slug}}">{{post.title|truncate(29)}}</a></h6>
