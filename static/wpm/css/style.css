@@ -268,7 +268,7 @@ p{
 }
 
 .whoweare11{
-  font-size: 37px;
+  font-size: 30px;
   margin-bottom: 10px;
   color: #fff;
   font-weight: bolder;
@@ -413,9 +413,9 @@ footer.page-footer .footer-copyright{
 	align-items: center;
   background-position: center;
   background-size: cover;
-  -webkit-box-shadow: inset 13px 11px 211px 200px rgba(0,0,0,0.75);
+/*  -webkit-box-shadow: inset 13px 11px 211px 200px rgba(0,0,0,0.75);
   -moz-box-shadow: inset 13px 11px 211px 200px rgba(0,0,0,0.75);
-  box-shadow: inset 13px 11px 211px 200px rgba(0,0,0,0.75);
+  box-shadow: inset 13px 11px 211px 200px rgba(0,0,0,0.75);*/
 }
 .whatwedoTitle{
   background-attachment: fixed;
@@ -1048,4 +1048,5 @@ div figure{
 div figure img{
   width: 100%;
 }
+
 

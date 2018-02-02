@@ -38,8 +38,8 @@
       <h5 class="resourceTitles">publications</h5>
     </center>
 
-    {% for resource in posts %}
     <div class="row">
+      {% for resource in posts %}
       <div class="col s12 m4 l4 MarginNews">
         <img src="/static/images/images/{{resource.feature_image}}" class="responsive-img">
         <small>Date: &nbsp;
@@ -62,15 +62,16 @@
           <a href="/{{resource.slug}}" class="readMore">Read More</a>
         </p>
       </div>
+      {%endfor%}
     </div>
-    {%endfor%}
+    
 
     <center>
       <h5 class="resourceTitles">Videos</h5>
     </center>
 
-    {% for resource in videos %}
     <div class="row">
+    {% for resource in videos %}
       <div class="col s12 m4 l4 MarginNews">
         <img src="/static/images/images/{{resource.feature_image}}" class="responsive-img">
         <small>Date: &nbsp;
@@ -93,15 +94,16 @@
           <a href="/{{resource.slug}}" class="readMore">Read More</a>
         </p>
       </div>
-    </div>
     {%endfor%}
+    </div>
 
     <center>
       <h5 class="resourceTitles">Reports</h5>
     </center>
 
-    {% for resource in reports %}
+    
     <div class="row">
+      {% for resource in reports %}
       <div class="col s12 m4 l4 MarginNews">
         <img src="/static/images/images/{{resource.feature_image}}" class="responsive-img">
         <small>Date: &nbsp;
@@ -124,8 +126,8 @@
           <a href="/{{resource.slug}}" class="readMore">Read More</a>
         </p>
       </div>
+      {%endfor%}
     </div>
-    {%endfor%}
 
   </div>
 </div>
