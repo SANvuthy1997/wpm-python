@@ -2,6 +2,12 @@ body{
 	font-family: Poppins;
 	background-color: #fff;
 }
+
+@font-face{
+  font-family: 'bebas';
+  src: url("../fonts/BebasNeue Bold.ttf");
+}
+
 p{
   font-family: Poppins !important;
   margin:0px !important;
@@ -268,7 +274,7 @@ p{
 }
 
 .whoweare11{
-  font-size: 30px;
+  font-size: 34px;
   margin-bottom: 10px;
   color: #fff;
   font-weight: bolder;
@@ -276,6 +282,7 @@ p{
   text-align: center;
   padding: 0px 20px;
   line-height: 50px;
+  font-family: 'bebas' !important;
 }
 .footerWoman{
     color: #fff;
@@ -434,6 +441,8 @@ footer.page-footer .footer-copyright{
   line-height: 40px;
   color: #fff;
   text-transform: uppercase;
+  font-family: 'bebas' !important;
+  font-size: 32px !important;
 }
 nav ul a:focus {
     transition: background-color .3s;

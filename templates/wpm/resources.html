@@ -6,7 +6,7 @@
 
 <div class="container1">
   <div class="row" style="padding-top: 20px;">
-    <div style="background-color: #fafafa;padding: 15px 25px;">
+    <div style="padding: 15px 25px;">
     {%for page in pages%}
       <!-- <center><h5 class="resourceTitle">{{page.title}}</h5></center> -->
       <center>{{page.description|safe}}</center>
@@ -35,14 +35,14 @@
   {%endfor%} -->
 
     <center>
-      <h5 class="resourceTitles">publications</h5>
+      <h5 class="resourceTitles" style="background-color: #f2f2f2; width: 100%; padding: 15px 0px;">publications</h5>
     </center>
 
     <div class="row">
       {% for resource in posts %}
       <div class="col s12 m4 l4 MarginNews">
         <img src="/static/images/images/{{resource.feature_image}}" class="responsive-img">
-        <small>Date: &nbsp;
+        <!-- <small>Date: &nbsp;
 
           <span class="show_date">
             {{resource.published_at}}
@@ -52,10 +52,10 @@
             dateTime = dateTime.split(":");
             $('.show_date').html(dateTime[0]);
           </script>
-        </small>
+        </small> -->
 
 
-        <h6 class="thisTitle">{{resource.title}}</h6>
+        <h6 class="thisTitle" style="font-family: 'bebas'; font-size: 18px;">{{resource.title}}</h6>
         {{resource.description|striptags|truncate(80)}}
         
         <p style="margin-left: 0px !important;margin-top: 10px !important">
@@ -67,14 +67,14 @@
     
 
     <center>
-      <h5 class="resourceTitles">Videos</h5>
+      <h5 class="resourceTitles" style="background-color: #f2f2f2; width: 100%; padding: 15px 0px;">Videos</h5>
     </center>
 
     <div class="row">
     {% for resource in videos %}
       <div class="col s12 m4 l4 MarginNews">
         <img src="/static/images/images/{{resource.feature_image}}" class="responsive-img">
-        <small>Date: &nbsp;
+        <!-- <small>Date: &nbsp;
 
           <span class="show_date">
             {{resource.published_at}}
@@ -84,10 +84,10 @@
             dateTime = dateTime.split(":");
             $('.show_date').html(dateTime[0]);
           </script>
-        </small>
+        </small> -->
 
 
-        <h6 class="thisTitle">{{resource.title}}</h6>
+        <h6 class="thisTitle" style="font-family: 'bebas'; font-size: 18px;">{{resource.title}}</h6>
         {{resource.description|striptags|truncate(80)}}
         
         <p style="margin-left: 0px !important;margin-top: 10px !important">
@@ -98,7 +98,7 @@
     </div>
 
     <center>
-      <h5 class="resourceTitles">Reports</h5>
+      <h5 class="resourceTitles" style="background-color: #f2f2f2; width: 100%; padding: 15px 0px;">Reports</h5>
     </center>
 
     
@@ -106,7 +106,7 @@
       {% for resource in reports %}
       <div class="col s12 m4 l4 MarginNews">
         <img src="/static/images/images/{{resource.feature_image}}" class="responsive-img">
-        <small>Date: &nbsp;
+        <!-- <small>Date: &nbsp;
 
           <span class="show_date">
             {{resource.published_at}}
@@ -116,10 +116,10 @@
             dateTime = dateTime.split(":");
             $('.show_date').html(dateTime[0]);
           </script>
-        </small>
+        </small> -->
 
 
-        <h6 class="thisTitle">{{resource.title}}</h6>
+        <h6 class="thisTitle" style="font-family: 'bebas'; font-size: 18px;">{{resource.title}}</h6>
         {{resource.description|striptags|truncate(80)}}
         
         <p style="margin-left: 0px !important;margin-top: 10px !important">

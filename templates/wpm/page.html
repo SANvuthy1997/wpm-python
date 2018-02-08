@@ -147,7 +147,7 @@
     <center><p class="textPoeple">WPM is governed by a group of dedicated and well-known Cambodian and international leaders working in the areas of gender and peacebuilding. Our Board provides indispensable guidance and direction to our organization and work. </p></center>
     <div class="row">
       {%for member in members%}
-        {%if member.duty == "Board of Directors"%}
+        {%if member.duty == "Board of directors"%}
         <div class="col s6 m3 l3">
           <a href="#modal{{member.id}}" class="modal-trigger BackImage" >
             <img src="/static/images/images/{{member.feature_image}}">
@@ -212,15 +212,15 @@
       <center><p class="textPoeple">
       {{page.description|safe}}
         </p></center>
-      <div class="row">
-      {%for partner in partners%}
-        <div class="col s12 m3 l3">
-        <a href="{{partner.url}}">
-          <img src="/static/images/images/{{partner.feature_image}}" class="responsive-img">
-        </a>
+        <div class="row">
+          {%for partner in partners%}
+            <div class="col s12 m3 l3">
+              <a href="{{partner.url}}">
+                <img src="/static/images/images/{{partner.feature_image}}" class="responsive-img">
+              </a>
+            </div>
+          {%endfor%}
         </div>
-      {%endfor%}
-      </div>
     </div>
   </div>
   {%endfor%}

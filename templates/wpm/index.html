@@ -95,36 +95,102 @@ $(document).ready(function(){
   </div>
 </div> -->
 
+<style type="text/css">
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  opacity: 0.0;
+    -webkit-transition: all 500ms ease-in-out;
+    -moz-transition: all 500ms ease-in-out;
+    -ms-transition: all 500ms ease-in-out;
+    -o-transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out;
+  color: #333;
+  font-size: 30px;
+  font-weight: bold;
+}
+.centered:hover{
+  opacity: 0.0;
+    -webkit-transition: all 500ms ease-in-out;
+    -moz-transition: all 500ms ease-in-out;
+    -ms-transition: all 500ms ease-in-out;
+    -o-transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out;
+}
+.display {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.0;
+    -webkit-transition: all 500ms ease-in-out;
+    -moz-transition: all 500ms ease-in-out;
+    -ms-transition: all 500ms ease-in-out;
+    -o-transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out;
+  color: #333;
+  font-size: 12px;
+  font-weight: bold;
+}
+.display:hover{
+  opacity: 0.0;
+    -webkit-transition: all 500ms ease-in-out;
+    -moz-transition: all 500ms ease-in-out;
+    -ms-transition: all 500ms ease-in-out;
+    -o-transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out;
+}
 
-<div class="container">
+img:hover + .centered {
+    opacity: 1.0;
+}
+
+img:hover + .display {
+    opacity: 1.0;
+}
+
+img:hover {
+    opacity: 0.5;
+    transition: 0.5s;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+</style>
+
+
+
+<div class="container" style="position: relative;">
   <div class="row">
     {%for post in posts_top%}
       {%set help=1%}
-      {%if loop.index==1%}
+      <!-- {%if loop.index==1%} -->
         <div class="col s12 m6 l6 marginBottom">
         <a href="/{{post.slug}}">
-          <img src="/static/images/images/{{post.feature_image}}" class="responsive-img "> 
+          <img src="/static/wpm/img/News_Events.jpg" class="responsive-img testImage">
+          <div class="centered">WOMEN MAKER BLOG</div> 
           <!-- imgSlideBig -->
-          <div class="imgNews">
+          <!-- <div class="imgNews">
             <div class="backNews">
               <h6 class="textNews"><a href="/{{post.slug}}">{{post.title}}</a></h6>
             </div>
-          </div>
+          </div> -->
         </a>
         </div>
-      {%else%}
+      <!-- {%else%} -->
             {%if loop.index==2 or loop.index==4 or loop.index==6%}
         <div class="col s12 m6 l6">
           <a href="/{{post.slug}}">
-          <div class="row" style="margin-bottom: 35px;">
+          <div class="row">
             {%endif%}
             <div class="col s12 m6 l6 marginBottom">
-              <img src="/static/images/images/{{post.feature_image}}" class="responsive-img">
+              
               <!-- imgSlide -->
               <div class="imgNews">
-                <div class="backNews">
-                  <h6 class="textNews"><a href="/{{post.slug}}">{{post.title|truncate(29)}}</a></h6>
-                </div>
+                  <a href="/{{post.slug}}">
+                    <img src="/static/images/images/{{post.feature_image}}" class="responsive-img">
+                    <div class="display">{{post.title|truncate(29)}}</div>
+                  </a> 
               </div>
             </div>
             {%if loop.index==3 or loop.index==5 or loop.index==6%}
