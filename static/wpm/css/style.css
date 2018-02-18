@@ -276,8 +276,7 @@ p{
 .whoweare11{
   font-size: 34px;
   margin-bottom: 10px;
-  color: #fff;
-  font-weight: bolder;
+  color: #fff
   text-transform: uppercase;
   text-align: center;
   padding: 0px 20px;
@@ -436,7 +435,6 @@ footer.page-footer .footer-copyright{
   background-size: cover;
 }
 .singleTitle1{
-  font-weight: bolder;
   padding: 0px 16px;
   line-height: 40px;
   color: #fff;
@@ -832,7 +830,7 @@ a .faModal{
 .btnDonateIndex{
   position: absolute;
   display: inline-block;
-  margin-left: 45%;
+  margin-left: 41%;
   background-color: #4aa1c8;
   margin-top: -16%;
   line-height: 0px;
