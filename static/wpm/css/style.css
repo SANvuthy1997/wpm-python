@@ -276,7 +276,7 @@ p{
 .whoweare11{
   font-size: 34px;
   margin-bottom: 10px;
-  color: #fff
+  color: #fff !important;
   text-transform: uppercase;
   text-align: center;
   padding: 0px 20px;
