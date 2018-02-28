@@ -1503,7 +1503,7 @@ def index(pagination=1):
 	global limit
 	form=ContactForm()
 	posts=Post.query.join(Category,Post.category_id == Category.id).filter(Category.slug=='slide').order_by(Post.id.desc()).limit(4).offset(int(int(int(pagination)-1)*limit)) 
-	posts_top = Post.query.join(UserMember).join(Category,Post.category_id == Category.id).filter(Category.slug!='resources').order_by(Post.id.desc()).limit(5)
+	posts_top = Post.query.join(UserMember).join(Category,Post.category_id == Category.id).filter(Category.slug!='get-involved').filter(Category.slug!='slide').filter(Category.slug!='what-we-do').order_by(Post.id.desc()).limit(5)
 	posts_bottom = Post.query.order_by(Post.id.desc()).limit(3).offset(3)
 	# posts_bottom=Post.query.all()
 	home_posts=Post.query.join(UserMember).order_by(Post.id.desc()).limit(limit).offset(int(int(int(pagination)-1)*limit))
