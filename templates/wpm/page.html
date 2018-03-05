@@ -331,8 +331,8 @@
   <!-- Three boxes -->
   <div class="DoBack">
     <div class="paddingTest">
-      <div class="row" style="margin: 0px; background-color:#9C9C9C;">
-        {% for project in projects[5] %}
+      {% for project in projects[5] %}
+        <div class="row" style="margin: 0px; background-image: url(/static/images/images/{{project.feature_image}});width: 100%;background-position: center;background-size: cover;">
           <div class="col s12 m12 l12" style="padding:15px 30px; text-align: justify;">
             <a href="/{{project.slug}}">
               <h6 class="whoweare11">{{project.title}}</h6>
@@ -343,8 +343,8 @@
                 </div>
             </a> 
           </div>
-        {%endfor%}
-      </div>
+        </div>
+      {%endfor%}
     </div>
 
     <!-- <script type="text/javascript">
@@ -356,8 +356,8 @@
     </script> -->
 
     <div class="paddingTest">
-      <div class="row" style="margin: 0px; background-color:#9C9C9C;">
-        {% for project in projects[7] %}
+      {% for project in projects[7] %}
+        <div class="row" style="margin: 0px; background-image: url(/static/images/images/{{project.feature_image}});width: 100%;background-position: center;background-size: cover;">
           <div class="col s12 m12 l12" style="padding:15px 30px; text-align: justify;">
             <a href="/{{project.slug}}">
               <h6 class="whoweare11">{{project.title}}</h6>
@@ -368,13 +368,13 @@
                 </div>
             </a> 
           </div>
-        {%endfor%}
-      </div>
+        </div>
+      {%endfor%}
     </div>
 
     <div class="paddingTest">
-      <div class="row" style="margin: 0px; background-color:#9C9C9C;">
-        {% for project in projects[8] %}
+      {% for project in projects[8] %}
+        <div class="row" style="margin: 0px; background-image: url(/static/images/images/{{project.feature_image}});width: 100%;background-position: center;background-size: cover;">
           <div class="col s12 m12 l12" style="padding:15px 30px; text-align: justify;">
             <a href="/{{project.slug}}">
               <h6 class="whoweare11">{{project.title}}</h6>
@@ -385,8 +385,8 @@
                 </div>
             </a> 
           </div>
-        {%endfor%}
-      </div>
+        </div>
+      {%endfor%}
     </div>
 
   </div>

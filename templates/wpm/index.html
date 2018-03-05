@@ -143,15 +143,15 @@ $(document).ready(function(){
     transition: all 500ms ease-in-out;
 }
 
-img:hover + .centered {
+.img:hover + .centered {
     opacity: 1.0;
 }
 
-img:hover + .display {
+.img:hover + .display {
     opacity: 1.0;
 }
 
-img:hover {
+.img:hover {
     opacity: 0.5;
     transition: 0.5s;
     filter: alpha(opacity=50); /* For IE8 and earlier */
@@ -188,7 +188,7 @@ img:hover {
               <!-- imgSlide -->
               <div class="imgNews">
                   <a href="/{{post.slug}}">
-                    <div style=" background: url(/static/images/images/{{post.feature_image}}) no-repeat center center;height: 185px; width: 100%; background-position: center;background-size: cover;"></div>
+                    <div style=" background: url(/static/images/images/{{post.feature_image}}) no-repeat center center;height: 185px; width: 100%; background-position: center;background-size: cover;" class="img"></div>
                     <div class="display">{{post.title|truncate(29)}}</div>
                   </a> 
               </div>
