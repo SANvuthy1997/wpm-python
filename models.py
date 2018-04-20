@@ -127,7 +127,7 @@ class Page(db.Model):
         return db.session.commit()
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String(255),nullable=True,unique=True)
+    title = db.Column(db.String(255),nullable=True)
     description = db.Column(db.Text,nullable=True)
     link = db.Column(db.String(255),nullable=True)
     feature_image=db.Column(db.String(300),nullable=True)
@@ -141,7 +141,7 @@ class Post(db.Model):
     price = db.Column(db.Integer)
     location = db.Column(db.String(300),nullable=True)
     date = db.Column(db.String(200),nullable=True)
-    
+
     def __init__(self, title, description,link ,category_id, feature_image, user_id,views=0,images='',trainers='',price=0, location='',date=''):
         self.title = title
         self.slug =slugify(title)
@@ -199,7 +199,7 @@ class Group(db.Model):
     def __str__(self):
         return self.name
     # def update(self):
-    #     return session_commit()    
+    #     return session_commit()
     def to_Json(self):
         return dict(id=self.id,
             name=self.name
@@ -243,7 +243,7 @@ class Contact(db.Model):
     def __str__(self):
         return self.name
     # def update(self):
-    #     return session_commit()    
+    #     return session_commit()
     def to_Json(self):
         return dict(id=self.id,
             firstname=self.firstname,
@@ -276,7 +276,7 @@ class Event(db.Model):
     def __str__(self):
         return self.title
     # def update(self):
-    #     return session_commit()    
+    #     return session_commit()
     def to_Json(self):
         return dict(id=self.id,
             title=self.title,
@@ -312,7 +312,7 @@ class Partner(db.Model):
     def __str__(self):
         return self.name
     # def update(self):
-    #     return session_commit()    
+    #     return session_commit()
     def to_Json(self):
         return dict(id=self.id,
             name=self.name,

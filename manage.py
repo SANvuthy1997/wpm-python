@@ -101,7 +101,7 @@ def config():
 			email = request.form['email']
 			send_name=request.form['name']
 			pwd = request.form['password']
-			
+
 			dataToSave = 'Template="'+template+'";\nlimit="'+str(limit)+'";\nemail="'+email+'";\npassword="'+pwd+'";\nname="'+send_name+'";\n'
 			file=open("config.txt","w")
 			file.write(dataToSave)
@@ -167,7 +167,7 @@ def admin_register():
 				return redirect(url_for('admin_login'))
 			else:
 				flash("Error in adding User !")
-				return redirect(url_for('admin_register'))	
+				return redirect(url_for('admin_register'))
 		except:
 			flash("Error in adding User !")
 			return redirect(url_for('admin_register'))
@@ -208,10 +208,10 @@ def admin_member(pagination=1,action='',slug=''):
 			if help_filename!='':
 				f.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 			else:
-				filename=''			
+				filename=''
 			images=''
 			member = Member(request.form['name'],request.form['possition'],request.form['detail'],filename,request.form['facebook'],request.form['linkin'],request.form['duty'])
-        	
+
         	status = Member.add(member)
 	        if not status:
 	            flash("member added successfully")
@@ -278,7 +278,7 @@ def admin_event(pagination=1,action='',slug=''):
 	form = EventForm()
 	now = str(datetime.now())
 	now= now.replace(':',"",10).replace(' ','',4).replace('.','',5).replace('-','',5)
-	
+
 	if action=='add':
 		#add event
 		# return str(request.method)
@@ -359,7 +359,7 @@ def admin_event(pagination=1,action='',slug=''):
 @auth.login_required
 def admin_booking(pagination=1,action='',name=''):
 	# return str(action)+":"+str(pagination)
-	if action=='delete':		
+	if action=='delete':
 		try:
 			booking=Booking.query.filter_by(name=name).first()
 			status = Booking.delete(booking)
@@ -388,7 +388,7 @@ def admin_booking(pagination=1,action='',name=''):
 @app.route('/admin/contact/<pagination>/')
 @auth.login_required
 def admin_contact(pagination=1,action='',firstname=''):
-	if action=='delete':		
+	if action=='delete':
 		try:
 			contact=Contact.query.filter_by(firstname=firstname).first()
 			status = Contact.delete(contact)
@@ -404,7 +404,7 @@ def admin_contact(pagination=1,action='',firstname=''):
 			pagin=int(pagin+1)
 		return render_template('admin/contact.html',contacts=contacts,current_pagin=int(pagination),pagin=int(pagin))
 
-#send contact mail 
+#send contact mail
 @app.route('/mail', methods=['GET'])
 @app.route('/mail/', methods=['GET'])
 @app.route('/mail/<action>', methods=['POST'])
@@ -413,7 +413,8 @@ def contact(action=""):
 	if request.method == 'POST':
 		if action == 'send':
 			email_header = 'New Contact'
-			recipients = 'wpm@women-peacemakers.org'
+			recipients = 'san.vuthy08@gmail.com'
+			# recipients = 'wpm@women-peacemakers.org'
 			body = 'Someone have had contact you through wpmcambodia.org with <br> Name:'+request.form['firstname']+" "+request.form['lastname']+' <br> Email: '+request.form['email'] + " <br> Phone: "+request.form ['tel'] +" <br> Message: "+ request.form ['msg']
 			send_mail(email_header, body, recipients)
 			flash('You were successfully to send the email')
@@ -440,7 +441,7 @@ def contact(action=""):
 #        	else:
 #        		flash("Error in contact")
 #        		return redirect(url_for('single',slug='contact'))
-       	
+
   #   elif type_submit=="ajax":
 		# #by ajax
 		# # return str(request.form['json_str']('firstname'))
@@ -507,7 +508,7 @@ def admin_partner(pagination=1,action='',slug=''):
 	form = PartnerForm()
 	now = str(datetime.now())
 	now= now.replace(':',"",10).replace(' ','',4).replace('.','',5).replace('-','',5)
-			
+
 	if action=='add':
 		#add event
 		# return str(request.method)
@@ -548,7 +549,7 @@ def admin_partner(pagination=1,action='',slug=''):
 					filename=''
 				partners.update({"slug" : slugify(request.form['name']) , "name" : request.form['name'],'url':request.form['url'],'feature_image':filename ,'description':request.form['description']})
 		   		status = db.session.commit()
-		   	
+
 				flash("Partner updated successfully.")
 				return redirect(url_for("admin_partner"))
 			except Exception as e:
@@ -596,7 +597,7 @@ def admin_post_add(slug=""):
 	form.category_id.choices = categories
 	now = str(datetime.now())
 	now= now.replace(':',"",10).replace(' ','',4).replace('.','',5).replace('-','',5)
-		   		
+
 	if request.method == 'POST':
 		# filename=str(request.form['txt_temp_image'])
 		# print filename
@@ -607,7 +608,7 @@ def admin_post_add(slug=""):
 		   		return redirect(url_for('admin_post_add'))
 		   	else:
 		   		obj=Post.query.filter_by(slug=slug)
-		   		
+
 		   		for post in obj:
 		   			old_images=post.images
 		   		result = request.form
@@ -619,7 +620,7 @@ def admin_post_add(slug=""):
 				if help_filename!='':
 					f.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 				else:
-					filename=''			
+					filename=''
 				images=''
 				# return filename
 				if not slug:
@@ -636,7 +637,7 @@ def admin_post_add(slug=""):
 		   						images=now+"-"+imagename
 		   					else:
 		   						images=images+"$$$$$"+(now+"-"+imagename)
-		   					help=help+1	
+		   					help=help+1
 			        	ob=Post(request.form['title'],request.form['description'],request.form['link'],request.form.get('category_id'),filename,request.cookies.get('blog_id'),0,images)
 			        	status=Post.add(ob)
 				        if not status:
@@ -650,7 +651,7 @@ def admin_post_add(slug=""):
 	   				help=1
    					uploaded_files = flask.request.files.getlist("other_image[]")
 	   				# return filename
-	   				
+
 	   				for f in uploaded_files:
 	   					imagename = secure_filename(f.filename)
 	   					if imagename!="":
@@ -733,7 +734,7 @@ def admin_category_add(slug=""):
 					return redirect(url_for('admin_category_add'))
 				else:
 					flash("Error in adding page !")
-					return redirect(url_for('admin_category_add'))	
+					return redirect(url_for('admin_category_add'))
 			elif slug:
 				#update category
 	   			Category.query.filter_by(slug = slug).update({"slug" : slugify(request.form['name']) , "name" : request.form['name'] })
@@ -816,7 +817,7 @@ def admin_page_delete(slug=''):
 @app.route('/admin/category/delete/<slug>')
 @app.route('/admin/category/delete/<slug>/')
 @auth.login_required
-def admin_category_delete(slug):	
+def admin_category_delete(slug):
 	obj1 = Category.query.filter_by(slug=slug).first()
 	try:
 		status = Category.delete(obj1)
@@ -926,7 +927,7 @@ def admin_menu_set(id=0,value=0,model=''):
 				category_object.update({"is_menu" : value })
 				status = db.session.commit()
 				if not status:
-					return jsonify({'success':True}) 
+					return jsonify({'success':True})
 				else:
 					return jsonify({'success':False})
 			except Exception as e:
@@ -937,7 +938,7 @@ def admin_menu_set(id=0,value=0,model=''):
 				page_object.update({"is_menu" : value })
 				status = db.session.commit()
 				if not status:
-					return jsonify({'success':True}) 
+					return jsonify({'success':True})
 				else:
 					return jsonify({'success':False})
 			except Exception as e:
@@ -962,7 +963,7 @@ def verify_email():
 				msg = Message('Password recovery',sender=email,recipients=[email_temp])
 				message_string='<div style="width:400px;border:2px solid blue;padding:10px;">Hello '+your_name+',<br/> Your password is: <b>'+your_passowrd+'</b></b> Thanks for choosing Amogli service.<br/></div>'
 				msg.html = message_string
-				mail.send(msg)				
+				mail.send(msg)
 				flash("Please check your email to recovery the password.")
 				return redirect(url_for("admin_login"))
 			except Exception as e:
@@ -1163,7 +1164,7 @@ def getEmailByGroupId(id):
 	    d['group_id'] = row.group_id
 	    d['email_id'] = row.email_id
 	    objects_list.append(d)
-	 
+
 	j = json.dumps(objects_list)
 	return j
 	# for email_temp in emails:
@@ -1225,7 +1226,7 @@ def admin_mail(id=0,action='',pagination=1):
 				search=(str(request.args['q']))#.split()
 				search=search.replace(" ",'+')
 				emails=Email.query.filter((Email.firstname).match("'%"+search+"%'")).order_by(Email.id.desc()).all()
-				
+
 				pagin=math.ceil((Email.query.filter((Email.firstname).match("'%"+search+"%'")).count())/limit)
 				if(math.ceil(Email.query.filter((Email.firstname).match("'%"+search+"%'")).count())%limit != 0 ):
 					pagin=int(pagin+1)
@@ -1238,12 +1239,12 @@ def admin_mail(id=0,action='',pagination=1):
 				return redirect(url_for('admin_mail'))
 			else:
 				flash("Error in adding email !")
-				return redirect(url_for('admin_mail'))	
-		
+				return redirect(url_for('admin_mail'))
+
 			return redirect(url_for('admin_mail'))
 	except Exception as e:
 		flash("Error:"+e.message)
-		return redirect(url_for('admin_mail'))	
+		return redirect(url_for('admin_mail'))
 email_count=0
 subject=''
 description=''
@@ -1269,7 +1270,7 @@ def importContact(pagination=1):
 		#add upload and add new email list
 		now = str(datetime.now())
 		now= now.replace(':',"",10).replace(' ','',4).replace('.','',5).replace('-','',5)
-   		
+
 		group_id=request.form['category_id']
 		file_csv = request.files['contact_file']
 		csv=secure_filename(file_csv.filename)
@@ -1307,7 +1308,7 @@ def importContact(pagination=1):
 											obj = Emailgroup(tmp.id,group_id)
 											status2 = Emailgroup.add(obj)
 								# print "===>"+str(help2)+":"+contact_email+" : "+firstname+":"+lastname+":"+str(group_id)+"-->"
-								
+
 							# else:
 							# 	print "============================="
 
@@ -1322,7 +1323,7 @@ def importContact(pagination=1):
 			else:
 				flash(str(count)+" emails add successfully")
 		else:
-			print "CSV file is null."		
+			print "CSV file is null."
 		return redirect(url_for("importContact"))
 #after send need to clear variables
 def sendEmail():
@@ -1354,19 +1355,19 @@ def sendEmail():
 					subject = ob.subject
 					subject_send=subject.replace("{{name}}",ob.name)
 					description_send = description.replace("{{name}}",ob.name)
-					
+
 					subject_send=subject_send.replace("{{email}}",ob.email)
 					description_send = description_send.replace("{{email}}",ob.email)
 					msg = Message(subject_send,sender=(ob.sending_name,ob.sending_email),recipients=[ob.email],reply_to=ob.reply_to)
 					message_string=str(description_send)
 					msg.html = message_string
-					mail.send(msg)	
+					mail.send(msg)
 					#remove email from email list after send
 					EmailList.delete(ob)
 
 					tmp = EmailSent(ob.email,ob.subject,ob.description,ob.reply_to,ob.sending_email,ob.sending_name)
 					EmailSent.add(tmp)
-					
+
 				except Exception as e:
 					print "Error: "+e.message
 				# time.sleep(5)
@@ -1374,7 +1375,7 @@ def sendEmail():
 			# Shutdown your cron thread if the web process is stopped
 			sched.shutdown(wait=False)
 
-			
+
 			#clear variables
 			email_count=0
 			subject=''
@@ -1413,7 +1414,7 @@ def admin_email():
 			for o in obj:
 				tmp=Email.query.filter_by(id=o.email_id)
 				for t in tmp:
-					#add to email list to send 
+					#add to email list to send
 					try:
 						help=EmailList.query.filter_by(email=t.email)
 						if help.count()<=0:
@@ -1502,7 +1503,7 @@ def verify_site():
 def index(pagination=1):
 	global limit
 	form=ContactForm()
-	posts=Post.query.join(Category,Post.category_id == Category.id).filter(Category.slug=='slide').order_by(Post.id.desc()).limit(4).offset(int(int(int(pagination)-1)*limit)) 
+	posts=Post.query.join(Category,Post.category_id == Category.id).filter(Category.slug=='slide').order_by(Post.id.desc()).limit(4).offset(int(int(int(pagination)-1)*limit))
 	posts_top = Post.query.join(UserMember).join(Category,Post.category_id == Category.id).filter(Category.slug!='get-involved').filter(Category.slug!='slide').filter(Category.slug!='what-we-do').order_by(Post.id.desc()).limit(5)
 	posts_bottom = Post.query.order_by(Post.id.desc()).limit(3).offset(3)
 	# posts_bottom=Post.query.all()
@@ -1561,7 +1562,7 @@ def single(slug='',pagination=1):
 
 		# posts = Post.query.join(Category,Post.category_id == Category.id).filter(Category.slug!='blog')
 		# return render_template(template+'/category.html',posts=posts)
-	
+
 	elif slug=='partners':
 		partners = Partner.query.order_by(Partner.id.desc()).all()
 		return render_template(template+'/partners.html',partners=partners)
@@ -1570,7 +1571,7 @@ def single(slug='',pagination=1):
 	elif slug=='donate':
 		donate= Page.query.filter_by(slug='your-contribution-matters')
 		return render_template(template+"/donate.html",page_name="category",category_name="Contact",category_slug='donate',donate=donate)
-	
+
 	pages=[]
 	if slug=='get-involve':
 		page4 = Page.query.filter_by(slug='get-involved').limit(1)
@@ -1595,7 +1596,7 @@ def single(slug='',pagination=1):
 			pagin=int(pagin+1)
 
 		return render_template(template+"/involve.html",page_name='training',pages=pages,category_slug='training',category_name='training',post1=post1,post2=post2,post3=post3,pagin=int(pagin),current_pagin=int(pagination))
-	
+
 	elif slug=='about-us':
 		whatwedo = Page.query.filter_by(slug='what-we-do')
 		vision = Page.query.filter_by(slug='vision')
@@ -1606,7 +1607,7 @@ def single(slug='',pagination=1):
 		return render_template(template+"/index.html",whatwedo=whatwedo,vision=vision,mission=mission,corevalue=corevalue,whoweare=whoweare,members=members)
 	form=BookingForm()
 	try:
-		
+
 		post_object=Post.query.filter_by(slug=slug)#.limit(1)
 		if post_object.count()<=0:
 			page_object=Page.query.filter_by(slug=slug)#.limit(1)
@@ -1669,7 +1670,7 @@ def single(slug='',pagination=1):
 				# if category_name=='Blog':
 				# 	return render_template(template+'/blog.html',page_name='category',category_slug=category_slug,category_name=category_name,posts=posts,pagin=int(pagin),current_pagin=int(pagination))
 				return render_template(template+'/category.html',page_name='category',category_slug=category_slug,category_name=category_name,posts=posts,pagin=int(pagin),current_pagin=int(pagination))
-			
+
 	except Exception as e:
 		return str(e.message)
 		abort(404)
