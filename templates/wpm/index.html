@@ -1,10 +1,11 @@
-{% include template_name+'/header.html' %} 
+{% include template_name+'/header.html' %}
 
 
 <div class="slider hide-on-small-only" style="position: relative;top: 50px">
   <ul class="slides">
     {%for post in posts%}
     <li>
+      <a href="{{post.link}}">
       <img src="/static/images/images/{{post.feature_image}}"> <!-- random image -->
       <div class="caption left-align">
         <div class="pBanner">
@@ -12,11 +13,12 @@
           {{post.title}}
           </h5>
           <p class="textBan">
-          
+
             {{post.description|striptags}}
-          
+
           </p>
       </div>
+      </a>
     </li>
     {%endfor%}
   </ul>
@@ -168,7 +170,7 @@ $(document).ready(function(){
         <div class="col s12 m6 l6 marginBottom">
         <a href="https://womenpeacemakers.weebly.com/" target="_blank">
           <img src="/static/wpm/img/News_Events.jpg" class="responsive-img testImage">
-          <div class="centered">WOMEN PEACE MAKERS BLOG</div> 
+          <div class="centered">WOMEN PEACE MAKERS BLOG</div>
           <!-- imgSlideBig -->
           <!-- <div class="imgNews">
             <div class="backNews">
@@ -184,13 +186,13 @@ $(document).ready(function(){
           <div class="row">
             {%endif%}
             <div class="col s12 m6 l6 marginBottom" style="padding: 0px;">
-              
+
               <!-- imgSlide -->
               <div class="imgNews">
                   <a href="/{{post.slug}}">
                     <div style=" background: url(/static/images/images/{{post.feature_image}}) no-repeat center center;height: 185px; width: 100%; background-position: center;background-size: cover;" class="img"></div>
                     <div class="display">{{post.title|truncate(29)}}</div>
-                  </a> 
+                  </a>
               </div>
             </div>
             {%if loop.index==3 or loop.index==5 or loop.index==6%}
@@ -198,7 +200,7 @@ $(document).ready(function(){
           </a>
          </div>
             {%endif%}
-          
+
       {%endif%}
     {%endfor%}
   </div>
@@ -208,4 +210,4 @@ $(document).ready(function(){
 
 
 
-{% include template_name+'/footer.html' %} 
+{% include template_name+'/footer.html' %}

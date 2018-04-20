@@ -1,4 +1,4 @@
-{% include template_name+'/header.html' %} 
+{% include template_name+'/header.html' %}
 
 
 {%for post in post_object%}
@@ -11,8 +11,8 @@
     <div class="col s12 m8 l8">
       <h5 class="singleTitle">{{post.title}}</h5>
       <!-- <span>
-        <i class="material-icons access_time">access_time</i> 
-      </span> 
+        <i class="material-icons access_time">access_time</i>
+      </span>
       <span class="date show_date">
         {{post.published_at}}
       </span>
@@ -27,6 +27,9 @@
       <p>
         {{post.description|safe}}
       </p>
+      {%if post.category.slug == 'publications'%}
+        <a href="{{post.link}}" target="_blank">Download Now</a>
+      {%endif%}
     </div>
 
     <div class="col s12 m4 l4 hide-on-small-only">
@@ -40,7 +43,7 @@
           <div class="col m8 l8">
             <h6 class="activitiesTitle">
                 {{p.title}}
-              
+
             </h6>
           </div>
         </a>
@@ -50,7 +53,7 @@
     </div>
 
   </div>
-  
+
 </div>
 {%endfor%}
 
