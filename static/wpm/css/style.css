@@ -417,8 +417,9 @@ footer.page-footer .footer-copyright{
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-  background-position: unset;
-  background-size: inherit;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repea
 /*  -webkit-box-shadow: inset 13px 11px 211px 200px rgba(0,0,0,0.75);
   -moz-box-shadow: inset 13px 11px 211px 200px rgba(0,0,0,0.75);
   box-shadow: inset 13px 11px 211px 200px rgba(0,0,0,0.75);*/
