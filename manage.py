@@ -421,8 +421,8 @@ def contact(action=""):
 	if request.method == 'POST':
 		if action == 'send':
 			email_header = 'New Contact'
-			recipients = 'san.vuthy08@gmail.com'
-			# recipients = 'wpm@women-peacemakers.org'
+			# recipients = 'san.vuthy08@gmail.com'
+			recipients = 'wpm@women-peacemakers.org'
 			body = 'Someone have had contact you through wpmcambodia.org with <br> Name:'+request.form['firstname']+" "+request.form['lastname']+' <br> Email: '+request.form['email'] + " <br> Phone: "+request.form ['tel'] +" <br> Message: "+ request.form ['msg']
 			send_mail(email_header, body, recipients)
 			flash('You were successfully to send the email')
