@@ -1,10 +1,10 @@
-{% include template_name+'/header.html' %} 
+{% include template_name+'/header.html' %}
 
 <div style="background-image: url(/static/{{template_name}}/img/resources.jpg);" class="bannerPage">
   <h5 class="whowearePage">Resources</h5>
 </div>
 
-<div class="container1">
+<div class="container">
   <div class="row" style="padding-top: 20px;">
     <div style="padding: 15px 25px;">
     {%for page in pages%}
@@ -57,14 +57,14 @@
 
         <h6 class="thisTitle" style="font-family: 'bebas'; font-size: 18px;">{{resource.title}}</h6>
         {{resource.description|striptags|truncate(80)}}
-        
+
         <p style="margin-left: 0px !important;margin-top: 10px !important">
           <a href="/{{resource.slug}}" class="readMore">Read More</a>
         </p>
       </div>
       {%endfor%}
     </div>
-    
+
 
     <center>
       <h5 class="resourceTitles" style="background-color: #e0dada; width: 100%; padding: 15px 0px;">Videos</h5>
@@ -89,7 +89,7 @@
 
         <h6 class="thisTitle" style="font-family: 'bebas'; font-size: 18px;">{{resource.title}}</h6>
         {{resource.description|striptags|truncate(80)}}
-        
+
         <p style="margin-left: 0px !important;margin-top: 10px !important">
           <a href="/{{resource.slug}}" class="readMore">Read More</a>
         </p>
@@ -100,7 +100,7 @@
     <center>
       <h5 class="resourceTitles" style="background-color: #e0dada; width: 100%; padding: 15px 0px;">Reports</h5>
     </center>
-    
+
     <div class="row">
       {% for resource in reports %}
       <div class="col s12 m4 l4 MarginNews">
@@ -120,7 +120,7 @@
 
         <h6 class="thisTitle" style="font-family: 'bebas'; font-size: 18px;">{{resource.title}}</h6>
         {{resource.description|striptags|truncate(80)}}
-        
+
         <p style="margin-left: 0px !important;margin-top: 10px !important">
           <a href="/{{resource.slug}}" class="readMore">Read More</a>
         </p>
