@@ -166,36 +166,63 @@ $(document).ready(function(){
   <div class="row">
     {%for post in posts_top%}
       {%set help=1%}
-      <!-- {%if loop.index==1%} -->
-        <div class="col s12 m6 l6 marginBottom">
+
+
+      {%if loop.index==1%}
+
+      <div class="col s12 m12 l6">
+        <a href="https://womenpeacemakers.weebly.com/" target="_blank">
+        <div class="indexColm4">
+          <img src="/static/wpm/img/News_Events.jpg" alt="" class="responsive-img indexImage" >
+          <div class="textAbsolute">
+            <div class="text">WOMEN PEACE MAKERS BLOG</div>
+          </div>
+        </div>
+      </a>
+      </div>
+
+
+        <!-- <div class="col s12 m6 l6 marginBottom">
         <a href="https://womenpeacemakers.weebly.com/" target="_blank">
           <img src="/static/wpm/img/News_Events.jpg" class="responsive-img testImage">
           <div class="centered">WOMEN PEACE MAKERS BLOG</div>
-          <!-- imgSlideBig -->
-          <!-- <div class="imgNews">
+
+          <div class="imgNews">
             <div class="backNews">
               <h6 class="textNews"><a href="/{{post.slug}}">{{post.title}}</a></h6>
             </div>
-          </div> -->
+          </div>
         </a>
-        </div>
-      <!-- {%else%} -->
+        </div>  -->
+      {%else%}
             {%if loop.index==2 or loop.index==4 or loop.index==6%}
+
+
+
+
         <div class="col s12 m6 l6">
           <a href="/{{post.slug}}">
           <div class="row">
             {%endif%}
             <div class="col s12 m6 l6 marginBottom" style="padding: 0px;">
 
+                <a href="/{{post.slug}}">
+                 <div class="indexColm4">
+                   <img src="/static/images/images/{{post.feature_image}}" alt="" class="responsive-img " style="height:207px;"> <!--indexImage -->
+                   <div class="textAbsolute">
+                     <div class="text">{{post.title|truncate(29)}}</div>
+                   </div>
+                 </div>
+
               <!-- imgSlide -->
-              <div class="imgNews">
+              <!-- <div class="imgNews">
                   <a href="/{{post.slug}}">
                     <div style=" background: url(/static/images/images/{{post.feature_image}}) no-repeat center center;height: 185px; width: 100%; background-position: center;background-size: cover;" class="img"></div>
                     <div class="display">{{post.title|truncate(29)}}</div>
                   </a>
-              </div>
+              </div> -->
             </div>
-            {%if loop.index==3 or loop.index==5 or loop.index==6%}
+            {%if loop.index==4 or loop.index==5 or loop.index==6%}
           </div>
           </a>
          </div>

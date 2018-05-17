@@ -1,4 +1,4 @@
-{% include template_name+'/header.html' %} 
+{% include template_name+'/header.html' %}
 {%for page in page_object%}
 
 {%if page.title == 'WHO WE ARE'%}
@@ -22,7 +22,7 @@
   <div class="row">
     <div class="col s12 m12 l12">
       <div class="row" style="margin: 0px; margin-top: -30px;">
-          
+
             {{page.description|safe}}
       </div>
     </div>
@@ -35,8 +35,8 @@
 
 <!-- For WHO WE ARE  -->
 {%if pages%}
-  
-<div class="container1">
+
+<div class="container">
   {% for page in pages[0] %}
   <div class="backPage">
     <center>
@@ -49,11 +49,11 @@
   {%endfor%}
 </div>
 
-<div class="container1" style="padding-top:25px;">
+<div class="container" style="padding-top:25px;">
   <div class="row">
       {% for page in pages[1] %}
         <div class="col s12 m4 l4">
-          <center> 
+          <center>
             <h6 class="ourVision">{{page.title}}</h6>
           </center>
                 {{page.description|safe}}
@@ -62,7 +62,7 @@
 
       {% for page in pages[5] %}
         <div class="col s12 m4 l4">
-          <center> 
+          <center>
             <h6 class="ourVision">{{page.title}}</h6>
           </center>
             {{page.description|safe}}
@@ -71,7 +71,7 @@
 
       {% for page in pages[2] %}
         <div class="col s12 m4 l4">
-          <center> 
+          <center>
             <h6 class="ourVision">{{page.title}}</h6>
           </center>
             <p>
@@ -83,18 +83,18 @@
   </div>
 
   <div class="backWhat1">
-    <div class="row" style="margin: 0px;">
+    <div class="row" style="margin: 0px;padding-top:30px;">
     {% for page in pages[6] %}
       <div class="col s12 m12 l12" style="padding: 0px">
-        <div class="HistoryBack">
+        <div class="HistoryBack" style="padding:40px 0px;">
           <center><h5 class="HistoryTitle">{{page.title}}</h5></center>
           <p class="ourHistory">
-            WPM began as a small working group in 2000, mostly comprised of female university students concerned about violence against women in their communities. In 2003, we formally registered as an NGO in Cambodia and focused our efforts on delivering trainings on conflict resolution and women rights protection for women and rural communities. At the same time, we sought to build networks of women and youth to engage in dialogue on women rights and contribute to positive social change. 
+            WPM began as a small working group in 2000, mostly comprised of female university students concerned about violence against women in their communities. In 2003, we formally registered as an NGO in Cambodia and focused our efforts on delivering trainings on conflict resolution and women rights protection for women and rural communities. At the same time, we sought to build networks of women and youth to engage in dialogue on women rights and contribute to positive social change.
 
             <br><br>
 
             Today’s WPM is the culmination of over a decade and a half of action and learning in the field. We have learned that although women are more likely to be victims of violence and require specific support, they are also key agents of change in their communities and in society at large. We have also learned that men, who may often be the perpetrators of gender-based violence, are fundamental allies in fighting for gender equality and engaging in conflict transformation. Our efforts to achieve gender equality and peace, and to leverage female leadership to transform conflict at every level of society, require the support and collaboration of everyone,  with a fundamental role for youth to pave the way for real change.
- 
+
           </p>
         </div>
       </div>
@@ -102,15 +102,17 @@
     </div>
   </div>
 
-  <div class="container1">
+  <div class="container">
+    <br>
     <h5 class="peopleText">Our Staff</h5>
     <center><p class="textPoeple">Our dedicated WPM staff members implement projects and initiatives and run day-to-day operations to ensure we function smoothly and effectively. </p></center>
+    <br>
     <div class="row">
       {%for member in members%}
         {%if member.duty == "It's People"%}
         <div class="col s6 m3 l3">
           <a href="#modal{{member.id}}" class="modal-trigger BackImage" >
-            <img src="/static/images/images/{{member.feature_image}}">
+            <img src="/static/images/images/{{member.feature_image}}" class="responsive-img">
             <h6 class="namePeople">{{member.name}}</h6>
             <h6 class="position">{{member.possition}}</h6>
           </a>
@@ -122,7 +124,7 @@
 
   </div>
 
-  <div class="container1">
+  <div class="container">
     <h5 class="peopleText">Previous Volunteers</h5>
     <center><p class="textPoeple">WPM and the community we serve cannot thanks enough the valuable time and effort contributed by our volunteers. We thus dedicated this entire page to honor our volunteers. </p></center>
     <div class="row">
@@ -142,7 +144,7 @@
 
   </div>
 
-  <div class="container1">
+  <div class="container">
     <h5 class="peopleText">Board of Directors</h5>
     <center><p class="textPoeple">WPM is governed by a group of dedicated and well-known Cambodian and international leaders working in the areas of gender and peacebuilding. Our Board provides indispensable guidance and direction to our organization and work. </p></center>
     <div class="row">
@@ -162,7 +164,7 @@
 
   </div>
 
-  <div class="container1">
+  <div class="container">
     <h5 class="peopleText">Advisors</h5>
     <center><p class="textPoeple">WPM receives advisory support on programming, organizational development, and project development from its advisors who are experts on relevant gender and peacebuilding issues as well as organizational processes.</p></center>
     <div class="row">
@@ -207,7 +209,7 @@
 
   {%for page in pages[3] %}
   <div class="backPartner">
-    <div class="container1">
+    <div class="container">
       <h5 class="peopleText">{{page.title}}</h5>
       <center><p class="textPoeple">
       {{page.description|safe}}
@@ -258,7 +260,7 @@
     </div>
   </div>
 
-  <div style="background-color: #fff; padding: 20px 20px;">
+  <div class="container" style="background-color: #fff; padding: 20px 20px;">
     <div class="row">
       {% for project in projects[6] %}
       <div class="col s12 m12 l12">
@@ -310,7 +312,7 @@
     </div>
   </div>
 
-  <div class="paddingTest" style="margin-top: 20px;">
+  <div class="paddingTest container" style="margin-top: 20px;">
 
     <div class="row">
       {% for project in projects[3] %}
@@ -325,11 +327,11 @@
       </div>
       {%endfor%}
     </div>
-  </div> 
+  </div>
   <!-- end container -->
 
   <!-- Three boxes -->
-  <div class="DoBack">
+  <!-- <div class="DoBack">
     <div class="paddingTest">
       {% for project in projects[5] %}
         <div class="row" style="margin: 0px; background-image: url(/static/images/images/{{project.feature_image}});width: 100%;background-position: center;background-size: cover;">
@@ -341,11 +343,33 @@
                     {{project.description|striptags |truncate(200)}}
                   </center>
                 </div>
-            </a> 
+            </a>
           </div>
         </div>
       {%endfor%}
-    </div>
+    </div> -->
+
+
+
+    <div class="DoBack" style="background-color:#f3f3f3;margin-bottom:-7px;">
+      {% for project in projects[5] %}
+        <div class="row" style="margin:0px; justify-content:center">
+          <div class="col s12 m12 l6" style="padding:0px; margin-bottom:-7px;">
+            <img src="/static/images/images/{{project.feature_image}}" alt="" class="responsive-img" style="margin:0px;">
+          </div>
+          <div class="col s12 m12 l6">
+            <h6 class="whoweare11">{{project.title}}</h6>
+            <div style="padding:0px 20px;">
+
+                {{project.description|striptags |truncate(600)}}
+              <br><br>
+              <a href="/{{project.slug}}" class="waves-effect waves-light btn ReadMore">Read More</a>
+              <br><br>
+            </div>
+          </div>
+        </div>
+      {%endfor%}
+
 
     <!-- <script type="text/javascript">
       $(document).ready(function(){
@@ -355,7 +379,7 @@
       });
     </script> -->
 
-    <div class="paddingTest">
+    <!-- <div class="paddingTest">
       {% for project in projects[7] %}
         <div class="row" style="margin: 0px; background-image: url(/static/images/images/{{project.feature_image}});width: 100%;background-position: center;background-size: cover;">
           <div class="col s12 m12 l12" style="padding:15px 30px; text-align: justify;">
@@ -366,13 +390,40 @@
                     {{project.description|striptags |truncate(200)}}
                   </center>
                 </div>
-            </a> 
+            </a>
           </div>
         </div>
       {%endfor%}
-    </div>
+    </div> -->
 
-    <div class="paddingTest">
+  {% for project in projects[7] %}
+    <div class="row" style="margin:0px;">
+        <div class="col s12 m12 l6 hide-on-med-and-down">
+          <h6 class="whoweare11">{{project.title}}</h6>
+          <div style="padding:0px 20px;">
+            {{project.description|striptags |truncate(600)}}<br><br>
+
+            <a href="/{{project.slug}}" class="waves-effect waves-light btn ReadMore">Read More</a>
+            <br><br>
+          </div>
+        </div>
+        <div class="col s12 m12 l6" style="padding:0px; margin-bottom:-7px">
+          <img src="/static/images/images/{{project.feature_image}}" alt="" class="responsive-img" style="margin:0px;">
+        </div>
+
+        <div class="col s12 m12 l6 hide-on-large-only">
+          <h6 class="whoweare11">{{project.title}}</h6>
+          <div style="padding:0px 20px;">
+            {{project.description|striptags |truncate(600)}}<br><br>
+
+            <a href="/{{project.slug}}" class="waves-effect waves-light btn ReadMore">Read More</a>
+            <br><br>
+          </div>
+        </div>
+      </div>
+    {%endfor%}
+
+    <!-- <div class="paddingTest">
       {% for project in projects[8] %}
         <div class="row" style="margin: 0px; background-image: url(/static/images/images/{{project.feature_image}});width: 100%;background-position: center;background-size: cover;">
           <div class="col s12 m12 l12" style="padding:15px 30px; text-align: justify;">
@@ -383,11 +434,28 @@
                     {{project.description|striptags |truncate(200)}}
                   </center>
                 </div>
-            </a> 
+            </a>
           </div>
         </div>
       {%endfor%}
-    </div>
+    </div> -->
+
+    {% for project in projects[8] %}
+    <div class="row" style="margin:0px;">
+        <div class="col s12 m12 l6" style="padding:0px; margin-bottom:0px;">
+          <img src="/static/images/images/{{project.feature_image}}" alt="" class="responsive-img" style="margin:0px;">
+        </div>
+        <div class="col s12 m12 l6">
+          <h6 class="whoweare11">{{project.title}}</h6>
+          <div style="padding:0px 20px;">
+            {{project.description|striptags |truncate(600)}}<br><br>
+
+            <a href="/{{project.slug}}" class="waves-effect waves-light btn ReadMore">Read More</a>
+            <br><br>
+          </div>
+        </div>
+      </div>
+    {%endfor%}
 
   </div>
 
@@ -395,7 +463,7 @@
 
 
 
-  <!-- <div class="container1">
+  <!-- <div class="container">
     <div class="row">
       <center>
         <h4>

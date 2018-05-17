@@ -1,4 +1,4 @@
-{% include template_name+'/header.html' %} 
+{% include template_name+'/header.html' %}
 
 
 
@@ -7,7 +7,7 @@
 </div>
 
 
-<div class="container1 NewsPage">
+<div class="container NewsPage">
   <div class="row">
     <center>
       <p style="margin: 0px 0px 30px 0px !important;">
@@ -15,7 +15,7 @@
       </p>
     </center>
   {%for post in posts%}
-    
+
       <div class="col s12 m4 l4 MarginNews">
         <img src="/static/images/images/{{post.feature_image}}" class="responsive-img">
         <small>Date: &nbsp;
@@ -33,7 +33,7 @@
 
         <h6 class="thisTitle">{{post.title}}</h6>
         {{post.description|striptags|truncate(150)}}
-        
+
         <p style="margin-left: 0px !important;margin-top: 10px !important">
           <a href="/{{post.slug}}" class="readMore">Read More</a>
         </p>
@@ -43,7 +43,7 @@
     {%endif%}
   {%endfor%}
 
-    
+
   </div>
 
   <div class="row">
@@ -99,7 +99,7 @@
                 {%endfor%}
               {%endif%}
             {%endif%}
-      
+
     </ul>
   </div>
 </div>
